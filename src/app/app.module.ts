@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,11 +16,13 @@ import { DriveComponent } from './car-configuration/car-config-items/drive/drive
 import { ExteriorComponent } from './car-configuration/car-config-items/exterior/exterior.component';
 import { InteriorComponent } from './car-configuration/car-config-items/interior/interior.component';
 import { SummaryViewComponent } from './car-configuration/summary-view/summary-view.component';
+import { ModelSliderComponent } from './car-configuration/model-slider/model-slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     SuperCarsModelsComponent,
     ViewCarsModelsComponent,
     CarCardComponent,
@@ -31,6 +34,7 @@ import { SummaryViewComponent } from './car-configuration/summary-view/summary-v
     ExteriorComponent,
     InteriorComponent,
     SummaryViewComponent,
+    ModelSliderComponent,
   ],
   imports: [
     BrowserModule,
