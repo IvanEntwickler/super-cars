@@ -1,31 +1,105 @@
 <div class="header">
 
 <nav class="navbar__container">
-  <svg>
-    <use></use>
+  <img class="logo-icon" src="./assets/Audi-Logo_2016.svg" alt="logo"/>
+  <form action="#" class="search">
+    <input type="search" class="search__input" placeholder="search...">
+    <button class="search__button">
+        <svg class="search__icon">
+            <use xlink:href="./assets/sprite.svg#icon-magnifying-glass"></use>
+        </svg>
+    </button>
+</form>
+  <svg class="user-icon">
+    <use xlink:href="./assets/sprite.svg#icon-user"></use>
   </svg>
-  <svg>
-    <use></use>
+  <svg class="hamburger-icon">
+    <use xlink:href="./assets/sprite.svg#icon-menu3"></use>
   </svg>
 </nav>
 <nav class="side-bar__container" *ngIf = 'showSidebar'>
-  <svg>
+  <svg class="ex-icon">
     <use></use>
   </svg>
-  <ul class="anchor-list">
-    <li class="anchor__container"><a href="#" class="link"> Beratung und Kauf </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Alle Modelle </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Service und Zubehör </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Elektromobilität </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Verfügbare Neuwagen </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Gebrauchtwagen </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Firmenwagen </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Probefahrt </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Uns finden </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Support </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Newsletter </a></li>
-    <li class="anchor__container"><a href="#" class="link"> News </a></li>
-    <li class="anchor__container"><a href="#" class="link"> Audi Welt </a></li>
+  <ul class="anchor-list__container">
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Beratung und Kauf </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Alle Modelle </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Service und Zubehör </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Elektromobilität </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Verfügbare Neuwagen </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Gebrauchtwagen </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Firmenwagen </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Probefahrt </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Uns finden </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Support </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon" >
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Newsletter </a>
+    </li>
+    <li class="anchor__container">
+      <svg class="anchor-icon">
+        <use></use>
+      </svg>
+      <a href="#" class="link"> News </a>
+    </li>
+    <li class="anchor__container">
+      <svg>
+        <use></use>
+      </svg>
+      <a href="#" class="link"> Audi Welt </a>
+    </li>
   </ul>
 </nav>
 </div>
