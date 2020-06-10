@@ -1,11 +1,11 @@
-<div class="header">
+<div class="header1">
 
 <nav class="navbar__container">
-  <img class="logo-icon" src="./assets/Audi-Logo_2016.svg" alt="logo"/>
+  <img class="logo-icon" src="./assets/icons8-audi.svg" alt="logo"/>
   <form action="#" class="search">
     <input type="search" class="search__input" placeholder="search...">
     <button class="search__button">
-        <svg class="search__icon">
+        <svg class="search-icon">
             <use xlink:href="./assets/sprite.svg#icon-magnifying-glass"></use>
         </svg>
     </button>
@@ -13,14 +13,18 @@
   <svg class="user-icon">
     <use xlink:href="./assets/sprite.svg#icon-user"></use>
   </svg>
-  <svg class="hamburger-icon">
+  <svg *ngIf='!showSidebar; else xIcon' class="hamburger-icon" (click) = 'onMenuClick()'>
     <use xlink:href="./assets/sprite.svg#icon-menu3"></use>
   </svg>
+  <ng-template #xIcon>
+    <svg class="ex-icon" (click) = 'onMenuClick()'>
+      <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+    </svg>
+  </ng-template>
 </nav>
-<nav class="side-bar__container" *ngIf = 'showSidebar'>
-  <svg class="ex-icon">
-    <use></use>
-  </svg>
+</div>
+<div class="header2" *ngIf = 'showSidebar'>
+<nav class="side-bar__container">
   <ul class="anchor-list__container">
     <li class="anchor__container">
       <svg class="anchor-icon">
@@ -95,7 +99,7 @@
       <a href="#" class="link"> News </a>
     </li>
     <li class="anchor__container">
-      <svg>
+      <svg class="anchor-icon">
         <use></use>
       </svg>
       <a href="#" class="link"> Audi Welt </a>
