@@ -1,7 +1,7 @@
 <div class="header1">
 
 <nav class="navbar__container">
-  <img class="logo-icon" src="./assets/icons8-audi.svg" alt="logo"/>
+  <img class="logo-icon" src="./assets/icons8-audi.svg" (click)="onNavigateHome()" alt="logo"/>
   <form action="#" class="search">
     <input type="search" class="search__input" placeholder="search...">
     <button class="search__button">
@@ -10,9 +10,13 @@
         </svg>
     </button>
 </form>
-  <svg class="user-icon">
+  <a href="#" class="user-icon">
+  <svg >
     <use xlink:href="./assets/sprite.svg#icon-user"></use>
   </svg>
+
+  <span href="#" class="user-icon"><strong>myAudi</strong></span>
+</a>
   <svg *ngIf='!showSidebar; else xIcon' class="hamburger-icon" (click) = 'onMenuClick()'>
     <use xlink:href="./assets/sprite.svg#icon-menu3"></use>
   </svg>
@@ -23,84 +27,84 @@
   </ng-template>
 </nav>
 </div>
-<div class="header2" *ngIf = 'showSidebar'>
+<div class="header2" (click) = 'onMenuClick()' *ngIf = 'showSidebar'>
 <nav class="side-bar__container">
   <ul class="anchor-list__container">
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-user-tie"></use>
       </svg>
       <a href="#" class="link"> Beratung und Kauf </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-directions_car"></use>
       </svg>
-      <a href="#" class="link"> Alle Modelle </a>
+      <a routerLink="models" class="link"> Alle Modelle </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-wrench"></use>
       </svg>
       <a href="#" class="link"> Service und Zubehör </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-power-cord"></use>
       </svg>
       <a href="#" class="link"> Elektromobilität </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-rocket"></use>
       </svg>
       <a href="#" class="link"> Verfügbare Neuwagen </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-spinner10"></use>
       </svg>
       <a href="#" class="link"> Gebrauchtwagen </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-star-full"></use>
       </svg>
       <a href="#" class="link"> Firmenwagen </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-meter"></use>
       </svg>
       <a href="#" class="link"> Probefahrt </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-location2"></use>
       </svg>
       <a href="#" class="link"> Uns finden </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-phone"></use>
       </svg>
       <a href="#" class="link"> Support </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon" >
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-envelop"></use>
       </svg>
       <a href="#" class="link"> Newsletter </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use xlink:href="./assets/sprite.svg#icon-bell"></use>
       </svg>
       <a href="#" class="link"> News </a>
     </li>
     <li class="anchor__container">
       <svg class="anchor-icon">
-        <use></use>
+        <use ></use>
       </svg>
       <a href="#" class="link"> Audi Welt </a>
     </li>
