@@ -1,3 +1,4 @@
+
 export interface Car {
   model: string;
   name: string;
@@ -6,3 +7,8 @@ export interface Car {
   imageUrl?: string;
   id: number;
 }
+
+
+
+
+

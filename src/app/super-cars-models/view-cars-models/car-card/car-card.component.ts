@@ -1,4 +1,5 @@
-import { CARS } from './../../../car-card-model';
+
+import { ETRON, A1, A3, A4 } from './../../../car-card-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car-card.component.scss']
 })
 export class CarCardComponent implements OnInit {
-  cars = CARS;
+etron = ETRON;
+A1 = A1;
+A3 = A3;
+A4 = A4;
+
+
 
   constructor() { }
 

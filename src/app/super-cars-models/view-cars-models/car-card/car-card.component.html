@@ -2,137 +2,56 @@
   <div class="model-cards__container">
     <div class="model-headers__container">
       <h1 class="model__headers">e-tron</h1>
-      <div class="card-list">
-        <span class="model">{{cars[0].model}}</span>
-        <span class="name">{{cars[0].name}}</span>
-        <span class="buyPrice">{{cars[0].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[0].leasingPrice}},00 €</span>
+      <ul class="card-list">
+        <li class="card-list__details" *ngFor="let car of etron">
+        <span class="model">{{car.model}}</span>
+        <span class="name">{{car.name}}</span>
+        <span class="buyPrice">{{car.buyPrice}},00 €</span>
+        <span class="leasingPrice">{{car.leasingPrice}},00 €</span>
         <img src="" alt="CarPic">
         <button>Konfigurieren</button>
-        <span class="model">{{cars[1].model}}</span>
-        <span class="name">{{cars[1].name}}</span>
-        <span class="buyPrice">{{cars[1].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[1].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-      </div>
+        </li>
+      </ul>
     </div>
     <div class="model-headers__container">
       <h1 class="model__headers">A1</h1>
-      <div class="card-list">
-        <span class="model">{{cars[2].model}}</span>
-        <span class="name">{{cars[2].name}}</span>
-        <span class="buyPrice">{{cars[2].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[2].leasingPrice}},00 €</span>
+      <ul class="card-list">
+        <li class="card-list__details" *ngFor="let car of A1">
+        <span class="model">{{car.model}}</span>
+        <span class="name">{{car.name}}</span>
+        <span class="buyPrice">{{car.buyPrice}},00 €</span>
+        <span class="leasingPrice">{{car.leasingPrice}},00 €</span>
         <img src="" alt="CarPic">
         <button>Konfigurieren</button>
-        <span class="model">{{cars[3].model}}</span>
-        <span class="name">{{cars[3].name}}</span>
-        <span class="buyPrice">{{cars[3].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[3].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-      </div>
+        </li>
+
+      </ul>
     </div>
     <div class="model-headers__container">
       <h1 class="model__headers">A3</h1>
-      <div class="card-list">
-        <span class="model">{{cars[4].model}}</span>
-        <span class="name">{{cars[4].name}}</span>
-        <span class="buyPrice">{{cars[4].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[4].leasingPrice}},00 €</span>
+      <ul class="card-list">
+        <li class="card-list__details" *ngFor="let car of A3">
+        <span class="model">{{car.model}}</span>
+        <span class="name">{{car.name}}</span>
+        <span class="buyPrice">{{car.buyPrice}},00 €</span>
+        <span class="leasingPrice">{{car.leasingPrice}},00 €</span>
         <img src="" alt="CarPic">
         <button>Konfigurieren</button>
-        <span class="model">{{cars[5].model}}</span>
-        <span class="name">{{cars[5].name}}</span>
-        <span class="buyPrice">{{cars[5].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[5].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[6].model}}</span>
-        <span class="name">{{cars[6].name}}</span>
-        <span class="buyPrice">{{cars[6].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[6].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[7].model}}</span>
-        <span class="name">{{cars[7].name}}</span>
-        <span class="buyPrice">{{cars[7].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[7].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[8].model}}</span>
-        <span class="name">{{cars[8].name}}</span>
-        <span class="buyPrice">{{cars[8].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[8].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model"> {{cars[9].model}}</span>
-        <span class="name">{{cars[9].name}}</span>
-        <span class="buyPrice">{{cars[9].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[9].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[10].model}}</span>
-        <span class="name">{{cars[10].name}}</span>
-        <span class="buyPrice">{{cars[10].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[10].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-      </div>
+        </li>
+      </ul>
     </div>
     <div class="model-headers__container">
       <h1 class="model__headers">A4</h1>
-      <div class="card-list">
-        <span class="model">{{cars[11].model}}</span>
-        <span class="name">{{cars[11].name}}</span>
-        <span class="buyPrice">{{cars[11].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[11].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[12].model}}</span>
-        <span class="name">{{cars[12].name}}</span>
-        <span class="buyPrice">{{cars[12].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[12].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[13].model}}</span>
-        <span class="name">{{cars[13].name}}</span>
-        <span class="buyPrice">{{cars[13].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[13].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[14].model}}</span>
-        <span class="name">{{cars[14].name}}</span>
-        <span class="buyPrice">{{cars[14].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[14].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[15].model}}</span>
-        <span class="name">{{cars[15].name}}</span>
-        <span class="buyPrice">{{cars[15].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[15].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model"> {{cars[16].model}}</span>
-        <span class="name">{{cars[16].name}}</span>
-        <span class="buyPrice">{{cars[16].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[16].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[17].model}}</span>
-        <span class="name">{{cars[17].name}}</span>
-        <span class="buyPrice">{{cars[17].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[17].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-        <span class="model">{{cars[18].model}}</span>
-        <span class="name">{{cars[18].name}}</span>
-        <span class="buyPrice">{{cars[18].buyPrice}},00 €</span>
-        <span class="leasingPrice">{{cars[18].leasingPrice}},00 €</span>
-        <img src="" alt="CarPic">
-        <button>Konfigurieren</button>
-      </div>
+      <ul class="card-list">
+        <li class="card-list__details" *ngFor="let car of A4">
+          <span class="model">{{car.model}}</span>
+          <span class="name">{{car.name}}</span>
+          <span class="buyPrice">{{car.buyPrice}},00 €</span>
+          <span class="leasingPrice">{{car.leasingPrice}},00 €</span>
+          <img src="" alt="CarPic">
+          <button>Konfigurieren</button>
+        </li>
+      </ul>
     </div>
     <div class="model-headers__container">
       <h1 class="model__headers">A5</h1>
