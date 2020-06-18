@@ -1,0 +1,113 @@
+
+//// all car-card rows container
+.car-card__container{
+margin-top: 5rem;
+}
+
+//// container for each car-card row
+
+.model-cards__container{
+  border-bottom: 1px solid black;
+}
+
+//// Header for the Model Type
+.model__headers{
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+
+//// List for car-card details
+.card-list{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+
+
+}
+
+.card-list__details{
+  display: flex;
+  height: 25rem;
+  flex-direction: column;
+  margin: 3rem 0;
+  padding: 1rem 1.5rem ;
+  background-color: white;
+  box-shadow: var(--shadow-box);
+
+
+.model-and-name__container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  .model{
+    font-size: 2.5rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .name{
+    display:flex;
+  align-items: center;
+  justify-content: center;
+    font-size: 1rem;
+    margin-left: 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.price__container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+
+
+  .buyPrice{
+    font-size: 1.25;
+    letter-spacing: 0.1rem;
+  }
+
+  .leasingPrice{
+    font-size: 1.25;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.image-and-button__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .model-image{
+  max-width: 20rem;
+  height: auto;
+  margin-bottom: 1rem;
+  }
+
+  .config-button{
+  font-size: 1.25rem ;
+  width: 20rem;
+  padding: 1rem;
+  background-color: white;
+  border:none;
+  box-shadow: var(--shadow-box);
+
+  &:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    box-shadow: var(--shadow-box-light);
+  }
+  }
+}
+
+
+}
+

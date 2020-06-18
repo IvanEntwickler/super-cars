@@ -97,5 +97,19 @@ export const Q8: Car[] = [
   {model: 'RS', name: 'Q8', buyPrice: 129500 , leasingPrice: 1107 , imageUrl: '',  id: 56},
 ];
 
-export const TT: Car[] = [];
-export const R8: Car[] = [];
+export const TT: Car[] = [
+  {model: 'TT', name: 'Coupe', buyPrice: 37050 , leasingPrice: 251 , imageUrl: '',  id: 57},
+  {model: 'TT', name: 'Roadster', buyPrice: 39450 , leasingPrice: 267 , imageUrl: '',  id: 58},
+  {model: 'TTS', name: 'Coupe TSFI', buyPrice: 55550 , leasingPrice: 467 , imageUrl: '',  id: 59},
+  {model: 'TTS', name: 'Roadster TSFI', buyPrice: 58350 , leasingPrice: 491 , imageUrl: '',  id: 60},
+  {model: 'TT RS', name: 'Coupe', buyPrice: 68250 , leasingPrice: 666 , imageUrl: '',  id: 61},
+  {model: 'TT RS', name: 'Roadster', buyPrice: 71050, leasingPrice: 693 , imageUrl: '',  id: 62},
+];
+export const R8: Car[] = [
+  {model: 'R8', name: 'Coupe V10 RWD', buyPrice: 37050 , leasingPrice: 251 , imageUrl: '',  id: 57},
+  {model: 'R8', name: 'Coupe V10', buyPrice: 39450 , leasingPrice: 267 , imageUrl: '',  id: 58},
+  {model: 'R8', name: 'Coupe V10 performance', buyPrice: 55550 , leasingPrice: 467 , imageUrl: '',  id: 59},
+  {model: 'R8', name: 'Spyder V10 RWD', buyPrice: 58350 , leasingPrice: 491 , imageUrl: '',  id: 60},
+  {model: 'R8', name: 'Spyder V10', buyPrice: 68250 , leasingPrice: 666 , imageUrl: '',  id: 61},
+  {model: 'R8', name: 'Spyder V10 performance', buyPrice: 71050, leasingPrice: 693 , imageUrl: '',  id: 62},
+];

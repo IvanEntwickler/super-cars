@@ -15,7 +15,7 @@
 .navbar__container{
   display:flex;
   background-color:white;
-  padding: 0 0.5rem;
+  padding: 0 3rem;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
@@ -95,7 +95,7 @@
   display:grid;
   grid-template-columns: repeat(1, minmax(auto-fit, 1fr));
   grid-template-rows: repeat(1, minmax(auto-fit, 1fr));
-  width: 30vw;
+  width: 25vw;
   height: 100%;
   background-color: white;
   position: absolute;
