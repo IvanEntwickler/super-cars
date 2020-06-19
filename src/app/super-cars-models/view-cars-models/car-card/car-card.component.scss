@@ -20,15 +20,27 @@ margin-top: 5rem;
 //// List for car-card details
 .card-list{
   display:grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-template-rows: auto;
   gap: 1rem;
-
+  @media only screen and (max-width: 800px){
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  @media only screen and (max-width: 400px){
+    display:grid;
+    grid-template-columns:auto;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
 
 }
 
 .card-list__details{
   display: flex;
+  max-width: 30rem;
   height: 25rem;
   flex-direction: column;
   margin: 3rem 0;
@@ -39,14 +51,11 @@ margin-top: 5rem;
 
 .model-and-name__container{
   display:flex;
-  align-items: center;
-  justify-content: center;
 
   .model{
     font-size: 2.5rem;
     display:flex;
     align-items: center;
-    justify-content: center;
 
   }
 
@@ -57,14 +66,13 @@ margin-top: 5rem;
     font-size: 1rem;
     margin-left: 1rem;
     letter-spacing: 0.1rem;
+    font-weight: bold;
   }
 }
 
 .price__container{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 0.5rem;
 
 

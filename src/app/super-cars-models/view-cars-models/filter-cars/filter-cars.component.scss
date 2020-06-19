@@ -1,0 +1,81 @@
+.form__container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.models__container{
+  font-size: 1.5rem;
+  padding: 3rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  h3{
+    font-weight: bold;
+  }
+
+  input{
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.vehicle-type__container{
+  font-size: 1.5rem;
+  padding: 3rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  h3{
+    font-weight: bold;
+  }
+
+  input{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.price__container{
+  font-size: 1.5rem;
+  padding: 3rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  h3{
+    font-weight: bold;
+  }
+
+  input{
+    width: 10rem;
+    height: 1rem;
+  }
+
+}
+
+.button__container{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-submit{
+  box-shadow: var(--shadow-box);
+  font-size: 1.5rem;
+  border: none;
+  justify-self: center;
+  width: 15rem;
+  background-color: var(--color-grey-dark-3);
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  &:hover{
+    cursor: pointer;
+    background-color: rgb(151, 184, 245);
+  }
+}
