@@ -1,9 +1,15 @@
-import { HomeComponent } from './home/home.component';
+import { CarModelService } from './car-model.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SuperCarsModelsComponent } from './super-cars-models/super-cars-models.component';
 import { ViewCarsModelsComponent } from './super-cars-models/view-cars-models/view-cars-models.component';
@@ -37,10 +43,16 @@ import { ModelSliderComponent } from './car-configuration/model-slider/model-sli
     ModelSliderComponent,
   ],
   imports: [
+    HttpClientModule,
+    // remove when real Server is available
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CarModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

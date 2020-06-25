@@ -2,7 +2,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">e-tron</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of etron">
+        <li class="card-list__details" *ngFor="let car of cars | slice:0:2">
         <div class="model-and-name__container">
           <span class="model">{{car.model}}</span>
           <span class="name">{{car.name}}</span>
@@ -21,7 +21,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A1</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A1">
+        <li class="card-list__details" *ngFor="let car of cars | slice:3:5">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -41,7 +41,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A3</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A3">
+        <li class="card-list__details" *ngFor="let car of cars | slice:5:11">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -59,7 +59,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A4</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A4">
+        <li class="card-list__details" *ngFor="let car of cars | slice:12:18">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -78,7 +78,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A5</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A5">
+        <li class="card-list__details" *ngFor="let car of cars | slice:19:26">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -97,7 +97,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A6</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A6">
+        <li class="card-list__details" *ngFor="let car of cars | slice:27:34">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -116,7 +116,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A7</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A7">
+        <li class="card-list__details" *ngFor="let car of cars | slice:35:38">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -135,7 +135,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">A8</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of A8">
+        <li class="card-list__details" *ngFor="let car of cars | slice:38:43">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -154,7 +154,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">Q2</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of Q2">
+        <li class="card-list__details" *ngFor="let car of cars | slice:43:45">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -173,7 +173,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">Q3</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of Q3">
+        <li class="card-list__details" *ngFor="let car of cars | slice:46:49">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -192,7 +192,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">Q5</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of Q5">
+        <li class="card-list__details" *ngFor="let car of cars | slice:50:52">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -211,7 +211,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">Q7</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of Q7">
+        <li class="card-list__details" *ngFor="let car of cars | slice:53:55">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -230,7 +230,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">Q8</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of Q8">
+        <li class="card-list__details" *ngFor="let car of cars | slice:56:58">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -249,7 +249,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">TT</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of TT">
+        <li class="card-list__details" *ngFor="let car of cars | slice:59:64">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>
@@ -268,7 +268,7 @@
     <div class="model-cards__container">
       <h1 class="model__headers">R8</h1>
       <ul class="card-list">
-        <li class="card-list__details" *ngFor="let car of R8">
+        <li class="card-list__details" *ngFor="let car of cars | slice:65:70">
           <div class="model-and-name__container">
             <span class="model">{{car.model}}</span>
             <span class="name">{{car.name}}</span>

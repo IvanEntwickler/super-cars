@@ -1,5 +1,5 @@
-
-import { ETRON, A1, A3, A4, A5, A6, A7, A8, Q2, Q3, Q5, Q7, Q8, TT, R8 } from './../../../car-card-model';
+import { Car } from './../../../interface';
+import { CarModelService } from './../../../car-model.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,27 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car-card.component.scss']
 })
 export class CarCardComponent implements OnInit {
-etron = ETRON;
-A1 = A1;
-A3 = A3;
-A4 = A4;
-A5 = A5;
-A6 = A6;
-A7 = A7;
-A8 = A8;
-Q2 = Q2;
-Q3 = Q3;
-Q5 = Q5;
-Q7 = Q7;
-Q8 = Q8;
-TT = TT;
-R8 = R8;
+cars: Car[];
 
 
 
-  constructor() { }
+  constructor(private carModelService: CarModelService) { }
 
   ngOnInit(): void {
+    this.getCars();
+  }
+
+  getCars() {
+    this.carModelService.getCarModels().subscribe(cars => this.cars = cars);
   }
 
 }
