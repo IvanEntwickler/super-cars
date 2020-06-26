@@ -18,6 +18,7 @@ cars: Car[];
     this.getCars();
   }
 
+  /// consumes the data from the service which gets initialized by the ngOnInit()
   getCars() {
     this.carModelService.getCarModels().subscribe(cars => this.cars = cars);
   }
