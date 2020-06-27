@@ -1,12 +1,12 @@
 <form class="form__container" [formGroup]="filterForm" (ngSubmit)= 'onSubmit()'>
   <div class="models__container">
   <h3>Modelle</h3>
-    <div *ngFor='let model of modelArray'>
+    <div *ngFor='let model of modelArray; let i=index'>
       <label>
       <input
       type="checkbox"
       formControlName="model"
-      [value]="model">{{model}}
+      [value]="model.value">{{model.name}}
       </label><br>
     </div>
   </div>
