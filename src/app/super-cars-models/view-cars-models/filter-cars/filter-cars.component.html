@@ -5,19 +5,21 @@
       <label>
       <input
       type="checkbox"
-      formControlName="model"
-      [value]="model.value">{{model.name}}
+      [value]="model.value"
+      (change)= 'onInputModel($event)'
+      >{{model.name}}
       </label><br>
     </div>
   </div>
   <div class="vehicle-type__container">
   <h3>Fahrzeugtyp</h3>
-  <div *ngFor='let vehicle of vehicleArray'>
+  <div *ngFor='let vehicle of vehicleArray; let i=index'>
     <label>
     <input
     type="checkbox"
-    formControlName="vehicle"
-    [value]="vehicle">{{vehicle}}
+    [value]="vehicle.value"
+    (change)='onInputVehicle($event)'
+    >{{vehicle.name}}
     </label><br>
   </div>
 </div>
@@ -30,7 +32,7 @@
   formControlName="price"
   step="25000.0" min="25000.0"
   max="250000.0"
-  > bis {{filterForm.value.price}} €
+  > bis {{filterForm.value.price}} EUR
 </div>
   <button class="button-submit" type='submit'>FILTERN</button>
   <button class="button-reset" type='button' (click)= 'onReset()'>RESET</button>

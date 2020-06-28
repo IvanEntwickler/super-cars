@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-filter-cars',
@@ -26,34 +26,71 @@ export class FilterCarsComponent implements OnInit {
     {name: 'RS', value: 'RS'}
   ];
   vehicleArray = [
-    'Alternative Antriebe', 'g-tron', 'Plug-in-Antriebe',
-    'Kompakt', 'Sportback', 'Limousine', 'Cabriolet',
-    'Sportwagen', 'Avant', 'allroad quattro', 'Coupe',
-    'SUV', 'Roadster', 'Spyder', 'Audi Q Modelle', 'Audi SQ Modelle'
+    {name: 'Alternative Antriebe', value: 'Alternative Antriebe'},
+    {name: 'g-tron', value: 'g-tron'}, {name: 'Plug-in-Antriebe', value: 'Plug-in-Antriebe'},
+    {name: 'Kompakt', value: 'Kompakt'}, {name: 'Sportback', value: 'Sportback'},
+    {name: 'Limousine', value: 'Limousine'}, {name: 'Cabriolet', value: 'Cabriolet'},
+    {name: 'Sportwagen', value: 'Sportwagen'}, {name: 'Avant', value: 'Avant'},
+    {name: 'allroad quattro', value: 'allroad quattro'}, {name: 'Coupe', value: 'Coupe'},
+    {name: 'SUV', value: 'SUV'}, {name: 'Roadster', value: 'Roadster'},
+    {name: 'Spyder', value: 'Spyder'}, {name: 'Audi Q Modelle', value: 'Audi Q Modelle'},
+    {name: 'Audi SQ Modelle', value: 'Audi SQ Modelle'}
   ];
 
-  constructor() { }
+  constructor(private formbuilder: FormBuilder) { }
 
 /// formControls for each category
   ngOnInit() {
     this.filterForm = new FormGroup({
       modelArr: new FormArray([]),
-      vehicle: new FormControl(),
+      vehicleArr: new FormArray([]),
       price: new FormControl('25000')
     });
   }
 
-  getControls() {
-    return (this.filterForm.get('modelArr') as FormArray).controls;
+  /// function for the input
+  onInputModel(event) {
+    const modelArr: FormArray = this.filterForm.get('modelArr') as FormArray;
+
+    /// checks if we selected the input
+    /// if true it pushes the value into the Array
+    /// else if we unselected the value the function
+    /// filters the item.value against the event.target.value
+    /// true: removes the control we unselected, false: gives empty Array
+    if (event.target.checked) {
+      modelArr.push(new FormControl(event.target.value));
+    } else {
+      modelArr.controls.filter((item: FormControl, index) => {
+        return item.value === event.target.value ? modelArr.removeAt(index) : false;
+      });
+    }
   }
 
-  /// submiting the form and reseting it to the initial values
+  onInputVehicle(event) {
+    const vehicleArr: FormArray = this.filterForm.get('vehicleArr') as FormArray;
+
+    /// checks if we selected the input
+    /// if true it pushes the value into the Array
+    /// else if we unselected the value the function
+    /// filters the item.value against the event.target.value
+    /// true: removes the control we unselected, false: gives empty Array
+    if (event.target.checked) {
+      vehicleArr.push(new FormControl(event.target.value));
+    } else {
+      vehicleArr.controls.filter((item: FormControl, index) => {
+        return item.value === event.target.value ? vehicleArr.removeAt(index) : false;
+      });
+    }
+  }
+
+  /// submiting the form
   onSubmit() {
     console.log(this.filterForm);
   }
 
+  /// reseting it to the initial values
   onReset() {
-    this.filterForm.reset({model: false, vehicle: false, price: '25000'});
+    this.filterForm.reset({modelArr: [], vehicleArr: [], price: '25000'});
   }
 
 }
