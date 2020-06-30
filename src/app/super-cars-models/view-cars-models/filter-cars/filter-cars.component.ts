@@ -1,5 +1,9 @@
+
+import { CarModelService } from './../../../car-model.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+import { Subscription, BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-filter-cars',
@@ -37,14 +41,14 @@ export class FilterCarsComponent implements OnInit {
     {name: 'Audi SQ Modelle', value: 'Audi SQ Modelle'}
   ];
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder, private http: HttpClient, private carModelService: CarModelService) { }
 
 /// formControls for each category
   ngOnInit() {
-    this.filterForm = new FormGroup({
-      modelArr: new FormArray([]),
-      vehicleArr: new FormArray([]),
-      price: new FormControl('25000')
+    this.filterForm = this.formbuilder.group({
+      modelArr: this.formbuilder.array([]),
+      vehicleArr: this.formbuilder.array([]),
+      price: this.formbuilder.control(25000)
     });
   }
 
@@ -85,12 +89,16 @@ export class FilterCarsComponent implements OnInit {
 
   /// submiting the form
   onSubmit() {
-    console.log(this.filterForm);
+    this.carModelService.filterSubject.next(this.filterForm.value);
+    console.log(this.filterForm.value);
+    console.log(this.filterForm.value.modelArr);
+    console.log(this.filterForm.value.vehicleArr);
+    console.log(this.filterForm.value.price);
   }
 
   /// reseting it to the initial values
   onReset() {
-    this.filterForm.reset({modelArr: [], vehicleArr: [], price: '25000'});
+    this.filterForm.reset({modelArr: [], vehicleArr: [], price: 25000});
   }
 
 }

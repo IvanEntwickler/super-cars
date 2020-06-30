@@ -3,9 +3,9 @@ export interface Car {
   model: string;
   name: string;
   buyPrice: number;
-  leasingPrice: number;
+  leasingPrice?: number;
   imageUrl?: string;
-  id: number;
+  id?: number;
 }
 
 
