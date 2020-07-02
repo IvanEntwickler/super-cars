@@ -1,9 +1,8 @@
 
 import { CarModelService } from './../../../car-model.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
-import { Subscription, BehaviorSubject, Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-filter-cars',
@@ -41,7 +40,7 @@ export class FilterCarsComponent implements OnInit {
     {name: 'Audi SQ Modelle', value: 'Audi SQ Modelle'}
   ];
 
-  constructor(private formbuilder: FormBuilder, private http: HttpClient, private carModelService: CarModelService) { }
+  constructor(private formbuilder: FormBuilder, private carModelService: CarModelService) { }
 
 /// formControls for each category
   ngOnInit() {
@@ -87,7 +86,7 @@ export class FilterCarsComponent implements OnInit {
     }
   }
 
-  /// submiting the form
+  /// submiting the form and sending it to the CarModelServcie(observable stream)
   onSubmit() {
     this.carModelService.filterSubject.next(this.filterForm.value);
     console.log(this.filterForm.value);

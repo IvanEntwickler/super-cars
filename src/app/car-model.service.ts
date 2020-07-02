@@ -1,8 +1,7 @@
 import { Car } from './interface';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +21,10 @@ export class CarModelService {
       return this.http.get<Car[]>(this.modelsUrl);
   }
 
+  /// gets the cars from database with a query string of the formdata
   getfilteredCars(formdata: any): Observable<Car[]> {
     return this.http
-    .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}`);
+    .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}&name=${formdata.vehicleArr}`);
   }
 }
 
