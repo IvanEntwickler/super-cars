@@ -2,6 +2,7 @@ import { Car } from './interface';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,10 @@ export class CarModelService {
       return this.http.get<Car[]>(this.modelsUrl);
   }
 
-  /// gets the cars from database with a query string of the formdata
+  /// gets the cars from database and compares the query string to the formdata
   getfilteredCars(formdata: any): Observable<Car[]> {
     return this.http
-    .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}&name=${formdata.vehicleArr}`);
+    .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}&name=${formdata.vehicleArr}&priceRange=${formdata.price}`);
   }
 }
 
