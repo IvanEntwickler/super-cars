@@ -1,0 +1,20 @@
+<div class="car-card__container" >
+  <div class="model-cards__container">
+    <ul class="card-list">
+      <li class="card-list__details" *ngFor="let filter of filteredCars$ | async">
+      <div class="model-and-name__container">
+        <span class="model">{{filter.model}}</span>
+        <span class="name">{{filter.name}}</span>
+      </div>
+      <div class="price__container">
+        <span class="buyPrice">ab {{filter.buyPrice}},00 €</span>
+        <span class="leasingPrice"> z.B. mtl. {{filter.leasingPrice}},00 € (mit PrivatLeasing)</span>
+      </div>
+      <div class="image-and-button__container">
+        <img class="model-image" src="" alt="CarPic">
+        <button class="config-button">Konfigurieren</button>
+      </div>
+      </li>
+    </ul>
+  </div>
+</div>

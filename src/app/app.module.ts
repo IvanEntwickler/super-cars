@@ -23,6 +23,7 @@ import { ExteriorComponent } from './car-configuration/car-config-items/exterior
 import { InteriorComponent } from './car-configuration/car-config-items/interior/interior.component';
 import { SummaryViewComponent } from './car-configuration/summary-view/summary-view.component';
 import { ModelSliderComponent } from './car-configuration/model-slider/model-slider.component';
+import { FilteredCarCardComponent } from './super-cars-models/view-cars-models/filtered-car-card/filtered-car-card.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ModelSliderComponent } from './car-configuration/model-slider/model-sli
     InteriorComponent,
     SummaryViewComponent,
     ModelSliderComponent,
+    FilteredCarCardComponent,
   ],
   imports: [
     ReactiveFormsModule,

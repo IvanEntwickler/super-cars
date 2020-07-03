@@ -11,6 +11,7 @@ import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 })
 export class FilterCarsComponent implements OnInit {
   filterForm: FormGroup;
+  filterClosed = true;
   modelArray = [
     {name: 'e-tron', value: 'e-tron'},
     {name: 'A1', value: 'A1'},
@@ -84,6 +85,11 @@ export class FilterCarsComponent implements OnInit {
         return item.value === event.target.value ? vehicleArr.removeAt(index) : false;
       });
     }
+  }
+
+  /// opens filter Form
+  onOpenFilterForm() {
+    this.filterClosed = !this.filterClosed;
   }
 
   /// submiting the form and sending it to the CarModelServcie(observable stream)

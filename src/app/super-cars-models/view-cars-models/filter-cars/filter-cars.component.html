@@ -1,4 +1,11 @@
-<form class="form__container" [formGroup]="filterForm" (ngSubmit)= 'onSubmit()'>
+<div class="shrinked-form__container" *ngIf="filterClosed" (click)='onOpenFilterForm()'>
+    <span class="filter-text">Filtern</span>
+    <svg class="dropdown-icon" >
+      <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-down"></use>
+    </svg>
+</div>
+
+<form *ngIf="!filterClosed" class="form__container" [formGroup]="filterForm" (ngSubmit)= 'onSubmit()'>
   <div class="models__container">
   <h3>Modelle</h3>
     <div *ngFor='let model of modelArray; let i=index'>
@@ -25,13 +32,13 @@
 </div>
 <div class="price__container">
   <h3>Preis</h3>
-  <label for="price">(25.000 EUR - 250.000 EUR):</label>
+  <label for="price">(25.000 EUR - 145.000 EUR):</label>
   <input
   type="range"
   id="price"
   formControlName="price"
-  step="25000.0" min="25000.0"
-  max="250000.0"
+  step="30000.0" min="25000.0"
+  max="145000.0"
   > bis {{filterForm.value.price}} EUR
 </div>
   <button class="button-submit" type='submit'>FILTERN</button>
