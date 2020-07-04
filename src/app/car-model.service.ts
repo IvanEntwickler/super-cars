@@ -8,13 +8,14 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CarModelService {
   filterSubject = new Subject<any>();
-  getTheCars = true;
   private modelsUrl = 'api/models'; /// URL structure of the web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
 
   /// gets the cars from database
   getCarModels(): Observable<Car[]> {
@@ -25,6 +26,11 @@ export class CarModelService {
   getfilteredCars(formdata: any): Observable<Car[]> {
     return this.http
     .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}&name=${formdata.vehicleArr}&priceRange=${formdata.price}`);
+  }
+
+  getCarById(id: number): Observable<Car> {
+    const url = `${this.modelsUrl}/${id}`;
+    return this.http.get<Car>(url);
   }
 }
 

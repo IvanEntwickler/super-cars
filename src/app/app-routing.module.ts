@@ -16,15 +16,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'models', component: SuperCarsModelsComponent },
-  { path: 'configuration', component: CarConfigurationComponent, children: [
-    { path: 'summary', component: SummaryViewComponent },
-    {path: 'car-confiq-items', component: CarConfigItemsComponent, children: [
-      { path: 'lines&packages', component: LinesAndPackagesComponent },
-      { path: 'drive', component: DriveComponent },
-      { path: 'exterior', component: ExteriorComponent },
-      { path: 'interior', component: InteriorComponent },
-    ]}
-  ]}
+  { path: 'configuration/:id', component: CarConfigurationComponent}
 ];
 
 @NgModule({

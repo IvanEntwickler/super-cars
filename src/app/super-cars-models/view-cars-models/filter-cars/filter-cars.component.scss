@@ -2,13 +2,13 @@
 .shrinked-form__container{
   display:flex;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(71, 95, 148, 1);
   align-items: center;
 }
 
 .filter-text{
   font-size: 2.5rem;
-  padding: 3rem 1.5rem;
+  padding: 1rem 1.5rem;
   color: white;
 }
 
@@ -27,10 +27,10 @@
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-.5rem);
   }
 }
 
@@ -46,7 +46,7 @@
 .models__container{
   font-size: 1.5rem;
   padding: 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(71, 95, 148, 1);
   color: white;
 
   h3{
@@ -63,7 +63,7 @@
 .vehicle-type__container{
   font-size: 1.5rem;
   padding: 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(71, 95, 148, 1);
   color: white;
 
   h3{
@@ -82,7 +82,7 @@
 .price__container{
   font-size: 1.5rem;
   padding: 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(71, 95, 148, 1);
   color: white;
 
   h3{
@@ -110,7 +110,7 @@
 
   &:hover{
     cursor: pointer;
-    background-color: rgb(151, 184, 245);
+    background-color: rgba(71, 95, 148, 1);
   }
 }
 

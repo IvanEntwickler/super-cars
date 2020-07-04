@@ -1,0 +1,36 @@
+.config__container{
+  display:grid;
+  grid-template-rows: 20vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+  [full-start] minmax(6rem, 1fr)
+  [center-start]
+  repeat(8, [col-start] minmax(min-content, 20rem) [col-end])
+  [center-end]
+  minmax(6rem, 1fr)
+  [full-end];
+  justify-content: center;
+}
+.header__text{
+  @media only screen and (max-width: 400px){
+    font-size: 4rem;
+  }
+  justify-self: center;
+  grid-column: center-start/ center-end;
+  font-size: 2.5rem;
+  padding: 1rem;
+  font-weight: 100;
+}
+
+app-model-slider{
+  grid-column: center-start/center-end;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+app-car-config-items{
+  grid-column: full-start/col-start;
+}
+
+app-summary-view{
+  grid-column: col-end/full-end;
+}
