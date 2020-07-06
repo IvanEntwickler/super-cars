@@ -5,7 +5,8 @@ export interface Car {
   priceRange: number;
   buyPrice?: number;
   leasingPrice?: number;
-  imageUrl?: string;
+  imageUrl?: string[];
+  videoUrl?: string;
   id?: number;
 }
 

@@ -1,3 +1,4 @@
+import { SafePipe } from './safe.pipe';
 import { CarModelService } from './car-model.service';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ import { FilteredCarCardComponent } from './super-cars-models/view-cars-models/f
 
 @NgModule({
   declarations: [
+    SafePipe,
     AppComponent,
     HeaderComponent,
     HomeComponent,

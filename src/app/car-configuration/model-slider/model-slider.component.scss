@@ -1,0 +1,35 @@
+.container{
+
+}
+
+.slide-video{
+
+}
+
+.slide-image{
+  width: 100%;
+}
+
+.arrow-container{
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.left-arrow{
+padding: 1rem;
+width: 5rem;
+height: 5rem;
+background-color: black;
+fill: white;
+}
+
+.right-arrow{
+  background-color: black;
+  fill: white;
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+}

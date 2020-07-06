@@ -1,6 +1,6 @@
 <div class="config__container">
   <h1 class="header__text">Konfiguration für: <strong>{{car.model | uppercase}} {{car.name}}</strong></h1>
-  <app-model-slider></app-model-slider>
+  <app-model-slider [car]="car"></app-model-slider>
   <app-car-config-items></app-car-config-items>
   <app-summary-view></app-summary-view>
 </div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Car } from './../../interface';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-model-slider',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./model-slider.component.scss']
 })
 export class ModelSliderComponent implements OnInit {
+  @Input() car: Car;
 
   constructor() { }
 
