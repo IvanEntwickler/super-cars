@@ -12,7 +12,7 @@
 }
 .header__text{
   @media only screen and (max-width: 400px){
-    font-size: 4rem;
+    font-size: 2rem;
   }
   justify-self: center;
   grid-column: center-start/ center-end;
@@ -23,8 +23,6 @@
 
 app-model-slider{
   grid-column: center-start/center-end;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 app-car-config-items{

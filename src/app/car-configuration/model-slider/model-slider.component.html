@@ -1,13 +1,12 @@
 <!-- <div  class="container" [style.background-image]="'url('+ car.imageUrl[1] +')'"> -->
 <div class="container">
-  <!-- <iframe class="slide-video" frameBorder="0" [src]="car.videoUrl | safe"></iframe> -->
-  <img class="slide-image" src="{{car.imageUrl[1]}}" alt="">
-  <div class="arrow-container">
-  <svg class="left-arrow">
-    <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-left"></use>
+  <svg class="left-arrow" (click)="plusElement(-1)" >
+    <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-left" ></use>
   </svg>
-  <svg class="right-arrow">
+  <div class="image-container">
+    <img  class="slide-image" src="{{car.imageUrl[slideIndex]}}" alt="">
+  </div>
+  <svg class="right-arrow" (click)="plusElement(+1)">
     <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-right"></use>
   </svg>
-</div>
 </div>
