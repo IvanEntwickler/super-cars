@@ -1,7 +1,6 @@
-import { SuperCarsModelsComponent } from './super-cars-models/super-cars-models.component';
-import { AppComponent } from './app.component';
 import { CarConfigItemsComponent } from './car-configuration/car-config-items/car-config-items.component';
-import { SummaryViewComponent } from './car-configuration/summary-view/summary-view.component';
+import { SummaryComponent } from './car-configuration/car-config-items/summary/summary.component';
+import { SuperCarsModelsComponent } from './super-cars-models/super-cars-models.component';
 import { InteriorComponent } from './car-configuration/car-config-items/interior/interior.component';
 import { ExteriorComponent } from './car-configuration/car-config-items/exterior/exterior.component';
 import { DriveComponent } from './car-configuration/car-config-items/drive/drive.component';
@@ -16,7 +15,15 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'models', component: SuperCarsModelsComponent },
-  { path: 'configuration/:id', component: CarConfigurationComponent}
+  { path: 'configuration/:id', component: CarConfigurationComponent, children: [
+    {path: 'car-config', component: CarConfigItemsComponent, children: [
+      {path: 'lines-packages', component: LinesAndPackagesComponent},
+      {path: 'antrieb', component: DriveComponent},
+      {path: 'exterieur', component: ExteriorComponent},
+      {path: 'interieur', component: InteriorComponent},
+      {path: 'summary', component: SummaryComponent},
+    ]},
+  ]},
 ];
 
 @NgModule({

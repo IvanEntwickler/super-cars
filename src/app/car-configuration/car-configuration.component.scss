@@ -12,7 +12,7 @@
 }
 .header__text{
   @media only screen and (max-width: 400px){
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   justify-self: center;
   grid-column: center-start/ center-end;
@@ -26,9 +26,9 @@ app-model-slider{
 }
 
 app-car-config-items{
-  grid-column: full-start/col-start;
+  grid-column: center-start/col-start;
 }
 
 app-summary-view{
-  grid-column: col-end/full-end;
+  grid-column: col-end/center-end;
 }

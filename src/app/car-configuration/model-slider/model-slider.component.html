@@ -1,12 +1,20 @@
 <!-- <div  class="container" [style.background-image]="'url('+ car.imageUrl[1] +')'"> -->
 <div class="container">
-  <svg class="left-arrow" (click)="plusElement(-1)" >
-    <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-left" ></use>
-  </svg>
+
   <div class="image-container">
+    <svg class="left-arrow" (click)="plusElement(-1)" >
+      <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-left" ></use>
+    </svg>
     <img  class="slide-image" src="{{car.imageUrl[slideIndex]}}" alt="">
+    <svg class="right-arrow" (click)="plusElement(+1)">
+      <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-right"></use>
+    </svg>
   </div>
-  <svg class="right-arrow" (click)="plusElement(+1)">
-    <use xlink:href="../../assets/sprite.svg#icon-chevron-thin-right"></use>
-  </svg>
+</div>
+<div class="config-items-link__container">
+  <a class="config-items-link" routerLink="car-config/lines-packages" routerLinkActive="config-items-link-active">Linien & Pakete</a>
+  <a class="config-items-link" routerLink="car-config/antrieb" routerLinkActive="config-items-link-active">Antrieb</a>
+  <a class="config-items-link" routerLink="car-config/exterieur" routerLinkActive="config-items-link-active">Exterieur</a>
+  <a class="config-items-link" routerLink="car-config/interieur" routerLinkActive="config-items-link-active">Interieur</a>
+  <a class="config-items-link" routerLink="car-config/summary" routerLinkActive="config-items-link-active">Zusammenfassung</a>
 </div>

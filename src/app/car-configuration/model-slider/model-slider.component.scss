@@ -1,37 +1,90 @@
+/// overall layout
 .container{
 display:grid;
-grid-template-columns:auto auto auto;
+grid-template-columns:auto;
 justify-items: center;
 align-items: center;
 gap:0;
 }
 
+/// <image> with arrows
 .image-container{
-max-width: 100rem;
+display:grid;
+grid-template-columns:2rem auto 2rem;
+justify-items: center;
+align-items: center;
+width: 100%;
 height: auto;
 margin:0;
 }
 
 .slide-image{
+  @media only screen and (max-width: 400px){
+    max-width: 35rem;
+    height: 20rem;
+  }
   max-width: 70rem;
-  height: 20rem;
+  height: 30rem;
 }
 
 
 .left-arrow{
-padding: 0.5rem;
-max-width: 2rem;
-margin-right: .5rem;
-height: 2rem;
-background-color: black;
-fill: white;
+  background-color: black;
+  fill: white;
+  padding: 0.5rem;
+  max-width: 2rem;
+  height: 2rem;
 }
 
 .right-arrow{
   background-color: black;
   fill: white;
-  margin-left: .5rem;
   padding: 0.5rem;
   max-width: 2rem;
   height: 2rem;
 }
+
+/// link container
+.config-items-link__container{
+margin-top: .5rem;
+width: 100%;
+padding: 1rem;
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+justify-items: center;
+align-items: center;
+background-color:  rgba(71, 95, 148, 1);
+gap: .5rem;
+
+}
+
+/// links to car-config-items
+.config-items-link{
+font-size: 1.5rem;
+text-decoration: none;
+color: black;
+font-weight: bold;
+}
+
+.config-items-link-active{
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  animation: impulse infinite 3s;
+
+  @keyframes impulse {
+    0%{
+      background-color:  rgba(71, 95, 148, 1);
+    }
+
+    50%{
+      background-color:var(--color-grey-light-2);
+    }
+
+    100%{
+      background-color:var(--color-grey-light-2);
+    }
+  }
+  }
