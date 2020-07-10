@@ -1,7 +1,7 @@
 import { Subscription } from 'rxjs';
 import { Car } from './../../../interface';
 import { CarModelService } from './../../../car-model.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lines-and-packages.component.html',
   styleUrls: ['./lines-and-packages.component.scss']
 })
-export class LinesAndPackagesComponent implements OnInit  {
+export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
   car: Car;
   subscription: Subscription;
 
@@ -18,6 +18,10 @@ export class LinesAndPackagesComponent implements OnInit  {
 
   ngOnInit() {
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
