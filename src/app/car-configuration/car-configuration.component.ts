@@ -1,5 +1,7 @@
+import { Subscription } from 'rxjs';
+
 import { CarModelService } from './../car-model.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from '../interface';
 
@@ -8,8 +10,9 @@ import { Car } from '../interface';
   templateUrl: './car-configuration.component.html',
   styleUrls: ['./car-configuration.component.scss']
 })
-export class CarConfigurationComponent implements OnInit {
+export class CarConfigurationComponent implements OnInit, OnDestroy {
   car: Car;
+  subscription: Subscription;
 
   constructor(
     private carModelService: CarModelService,
@@ -23,7 +26,13 @@ export class CarConfigurationComponent implements OnInit {
   /// subscribes to car with the fitting id
   getCarById() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.carModelService.getCarById(id).subscribe(car => this.car = car);
+    this.subscription = this.carModelService.getCarById(id).subscribe(car => {
+      return this.car = car;
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
