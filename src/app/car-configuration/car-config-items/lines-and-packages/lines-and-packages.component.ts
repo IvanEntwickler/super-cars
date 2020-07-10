@@ -11,12 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinesAndPackagesComponent implements OnInit  {
   car: Car;
+  subscription: Subscription;
 
 
   constructor(private carModelService: CarModelService) { }
 
   ngOnInit() {
-
+    this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
   }
 
 }

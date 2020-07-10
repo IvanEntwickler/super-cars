@@ -8,7 +8,7 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 })
 export class CarModelService {
   car: Car;
-  carState = new Subject<Car>();
+  carState = new BehaviorSubject<Car>(this.car);
   filterSubject = new Subject<any>();
   private modelsUrl = 'api/models'; /// URL structure of the web api
   httpOptions = {
@@ -31,7 +31,7 @@ export class CarModelService {
   }
 
   /// gets car with fitting id
-  getCarById(id: number): Subject<Car> {
+  getCarById(id: number): BehaviorSubject<Car> {
     const url = `${this.modelsUrl}/${id}`;
     this.http.get<Car>(url).subscribe(v => {
       this.carState.next(v);
@@ -39,8 +39,8 @@ export class CarModelService {
     return this.carState;
   }
 
-  getCarState() {
-    this.carState.next(this.car);
+  getCarState(): Observable<Car> {
+    return this.carState.asObservable();
   }
 }
 
