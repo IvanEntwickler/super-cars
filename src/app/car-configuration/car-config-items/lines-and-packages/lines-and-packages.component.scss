@@ -1,7 +1,47 @@
+h3{
+  font-size: 2rem;
+}
+
+/// parent container for the template
 .line__container{
+display: grid;
+grid-template-columns: auto;
+margin-top: 2rem;
+gap: 4rem;
 
 }
 
-.line-set{
+/// container to divide the the layout in two columns car-image | input&text
+.line-set__container{
+  display: grid;
+  grid-template-columns: auto 20rem;
+  gap: 2rem;
+}
+
+.car-image{
+max-width: 10rem;
+height: auto;
+}
+
+// .inputAndtext__container{
+
+// }
+
+.input__container{
+display: flex;
+align-items: center;
+margin-bottom: .5rem;
+
+label{
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+}
+
+.input-checkbox{
+  width: 2rem;
+  height: 2rem;
 
 }

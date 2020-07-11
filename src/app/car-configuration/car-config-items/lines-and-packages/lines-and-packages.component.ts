@@ -16,6 +16,7 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
 
   constructor(private carModelService: CarModelService) { }
 
+  // getting the car State
   ngOnInit() {
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
   }

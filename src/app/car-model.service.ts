@@ -30,7 +30,7 @@ export class CarModelService {
     .get<Car[]>(`/${this.modelsUrl}/?model=${formdata.modelArr}&name=${formdata.vehicleArr}&priceRange=${formdata.price}`);
   }
 
-  /// gets car with fitting id
+  /// gets car with fitting id --- subscribe() to the Observable and pushing the Data with next()
   getCarById(id: number): BehaviorSubject<Car> {
     const url = `${this.modelsUrl}/${id}`;
     this.http.get<Car>(url).subscribe(v => {
@@ -39,6 +39,7 @@ export class CarModelService {
     return this.carState;
   }
 
+  /// getting the car state from the BehaviourSubject
   getCarState(): Observable<Car> {
     return this.carState.asObservable();
   }

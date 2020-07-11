@@ -11,5 +11,8 @@ export class SummaryViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /// 3.0% von Basis auf advanced im Durchschnitt
+  /// 8.0% von Basis auf s line im Durchschnitt
+  /// 15% von Basis auf edition one im Durchschnitt
 
 }
