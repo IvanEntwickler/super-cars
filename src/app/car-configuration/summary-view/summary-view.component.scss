@@ -1,0 +1,100 @@
+/// parent container
+.container{
+  background-color: white;
+  box-shadow: var(--shadow-box);
+  max-width: fit-content;
+  height: 50vh;
+}
+/// mode-name
+.model-name__container{
+}
+.car-model{}
+.car-name{}
+
+/// image
+.car-image__container{
+display: grid;
+grid-template-columns: auto;
+justify-items: center;
+align-items: center;
+}
+.car-image{
+  max-width: 15rem;
+  height: auto;
+}
+
+/// price
+.buyPrice__container{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.price-text{
+  display: grid;
+  justify-items: self-start;
+}
+.price{
+  display: grid;
+  justify-items: self-end;
+}
+
+/// extras
+.extras__container{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3rem;
+}
+.extras-text{
+  display: grid;
+  justify-items: self-start;
+}
+.extras-price{
+  display: grid;
+  justify-items: self-end;
+}
+
+/// final-price
+.finalPrice__container{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.finalPrice-text{
+  display: grid;
+  justify-items: self-start;
+}
+.finalPrice{
+  display: grid;
+  justify-items: self-end;
+}
+
+/// leasing Price
+.leasingPrice__container{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3rem;
+}
+.leasingPrice-text{
+  display: grid;
+  justify-items: self-start;
+}
+.leasingPrice{
+  display: grid;
+  justify-items: self-end;
+}
+
+/// button pointing to overview
+.overview-button__container{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+}
+.overview-button{
+}

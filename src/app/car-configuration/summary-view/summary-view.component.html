@@ -1,22 +1,29 @@
-<div class="">
+<div class="container">
   <div class="model-name__container">
-    <h3></h3>
-    <span></span>
+    <h3 class="car-model">{{car.model}}</h3>
+    <span class="car-name">{{car.name}}</span>
   </div>
-  <img src="" alt="">
-  <div class="">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="car-image__container">
+    <img class="car-image" src="{{car.imageUrl[extras]}}" alt="car-pic">
   </div>
-  <div class="">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="buyPrice__container">
+    <span class="price-text">Basispreis</span>
+    <span class="price">{{car.buyPrice}},00 EUR</span>
   </div>
-<a href="#">Ihre Konfiguration</a>
+    <div class="extras__container">
+      <span class="extras-text">Sonderausstattung</span>
+      <span class="extras-price">{{(car.buyPrice / 100) * 2}},00 EUR </span>
+    </div>
+  <hr>
+  <div class="finalPrice__container">
+    <span class="finalPrice-text">Gesamtpreis</span>
+    <span class="finalPrice">{{car.buyPrice + (car.buyPrice / 100) * 2}},00 EUR</span>
+  </div>
+    <div class="leasingPrice__container">
+      <span class="leasingPrice-text">Rate z.B mtl.</span>
+      <span class="leasingPrice">{{car.leasingPrice}},00 EUR</span>
+    </div>
+  <div class="overview-button__container">
+    <a class="overview-button" href="#">Weiter zur Übersicht</a>
+  </div>
 </div>
-
-<p>summary-view works!</p>
