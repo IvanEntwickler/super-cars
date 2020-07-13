@@ -1,15 +1,36 @@
 /// parent container
 .container{
+  @media only screen and (max-width: 450px){
+    font-size: 50%;
+  }
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
   background-color: white;
   box-shadow: var(--shadow-box);
-  max-width: fit-content;
-  height: 50vh;
+  width: fit-content;
+  height: 60vh;
+
+  hr{
+    background-color: black;
+    max-height: 0.5rem;
+  }
 }
 /// mode-name
+
 .model-name__container{
+  width: 100%;
+  margin: 0;
+  padding:0;
+  background-color: var(--color-grey-light-4);
 }
-.car-model{}
-.car-name{}
+
+.car-model{
+  font-size: 1.5rem;
+}
+.car-name{
+  font-size: 1.3rem;
+}
 
 /// image
 .car-image__container{
@@ -34,10 +55,14 @@ align-items: center;
 .price-text{
   display: grid;
   justify-items: self-start;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .price{
   display: grid;
   justify-items: self-end;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /// extras
@@ -50,10 +75,14 @@ align-items: center;
 .extras-text{
   display: grid;
   justify-items: self-start;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .extras-price{
   display: grid;
   justify-items: self-end;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /// final-price
@@ -67,10 +96,14 @@ align-items: center;
 .finalPrice-text{
   display: grid;
   justify-items: self-start;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .finalPrice{
   display: grid;
   justify-items: self-end;
+  font-weight: bold;
+  font-size: 0.95rem;
 }
 
 /// leasing Price
@@ -83,10 +116,14 @@ align-items: center;
 .leasingPrice-text{
   display: grid;
   justify-items: self-start;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .leasingPrice{
   display: grid;
   justify-items: self-end;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /// button pointing to overview
@@ -97,4 +134,12 @@ align-items: center;
   gap: 3rem;
 }
 .overview-button{
+  padding: 1rem;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }

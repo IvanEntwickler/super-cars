@@ -1,10 +1,17 @@
 <h3>Ausstattungslinien</h3>
+<form [formGroup]="inputForm" ngSubmit="onSubmit()">
 <div class="line__container">
   <div class="line-set__container">
     <img src="{{car.imageUrl[0]}}" alt="line-pic" class="car-image">
     <div class="inputAndtext__container">
       <div class="input__container">
-        <input type="checkbox" id="Basis" class="input-checkbox">
+        <input
+        type="radio"
+        [value]="car"
+        id="Basis"
+        class="input-checkbox"
+        checked
+        >
         <label for="Basis">Basis</label><br>
       </div>
       <span class="info-text">
@@ -18,7 +25,14 @@
     <img src="{{car.imageUrl[0]}}" alt="line-pic" class="car-image">
     <div class="inputAndtext__container">
       <div class="input__container">
-        <input type="checkbox" id="advanced" class="input-checkbox">
+        <input
+        type="radio"
+        [value]="car"
+        (change)= "onAdvancedCheck($event)"
+
+        id="advanced"
+        class="input-checkbox"
+        >
         <label for="advanced">advanced</label><br>
       </div>
       <span class="info-text">
@@ -32,8 +46,12 @@
     <img src="{{car.imageUrl[1]}}" alt="line-pic" class="car-image">
     <div class="inputAndtext__container">
       <div class="input__container">
-        <input type="checkbox" id="S line" class="input-checkbox">
-        <label for="advanced">S line</label><br>
+        <input
+        type="radio"
+        [value]="car"
+        id="S line"
+        class="input-checkbox">
+        <label for="S line">S line</label><br>
       </div>
       <span class="info-text">
         S steht für Sportlichkeit. Und für dynamische Optik und souveräne Performance.
@@ -46,8 +64,13 @@
     <img src="{{car.imageUrl[1]}}" alt="line-pic" class="car-image">
     <div class="inputAndtext__container">
       <div class="input__container">
-        <input type="checkbox" id="edition one" class="input-checkbox">
-        <label for="advanced">edition one</label><br>
+        <input
+        type="radio"
+        [value]="car"
+        id="edition one"
+        class="input-checkbox"
+        >
+        <label for="edition one">edition one</label><br>
       </div>
       <span class="info-text">
         Mit der edition one sind Sie ganz vorn:
@@ -59,3 +82,4 @@
     </div>
   </div>
 </div>
+</form>
