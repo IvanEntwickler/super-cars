@@ -8,16 +8,16 @@
   </div>
   <div class="buyPrice__container">
     <span class="price-text">Basispreis</span>
-    <span class="price">{{car.buyPrice | number}},00 EUR</span>
+    <span class="price">{{car.buyPrice}},00 EUR</span>
   </div>
     <div class="extras__container">
       <span class="extras-text">Extras</span>
-      <span class="extras-price">{{(car.buyPrice / 100) * 2 | number}},00 EUR </span>
+      <span class="extras-price">{{(car.buyPrice / 100) * 2 }},00 EUR </span>
     </div>
   <hr>
   <div class="finalPrice__container">
     <span class="finalPrice-text">Gesamtpreis</span>
-    <span class="finalPrice">{{car.buyPrice + (car.buyPrice / 100) * 2 | number}},00 EUR</span>
+    <span class="finalPrice">{{car.buyPrice + (car.buyPrice / 100) * 2 }},00 EUR</span>
   </div>
     <div class="leasingPrice__container">
       <span class="leasingPrice-text">Rate z.B mtl.</span>

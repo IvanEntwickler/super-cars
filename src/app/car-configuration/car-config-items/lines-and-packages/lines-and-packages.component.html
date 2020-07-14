@@ -6,11 +6,12 @@
     <div class="inputAndtext__container">
       <div class="input__container">
         <input
-        type="radio"
+        type="checkbox"
+        formControlName="basis"
+        (change) = "onBasisCheck($event)"
         [value]="car"
         id="Basis"
         class="input-checkbox"
-        checked
         >
         <label for="Basis">Basis</label><br>
       </div>
@@ -26,10 +27,10 @@
     <div class="inputAndtext__container">
       <div class="input__container">
         <input
-        type="radio"
+        type="checkbox"
+        (change) = "onAdvancedCheck($event)"
+        formControlName="advanced"
         [value]="car"
-        (change)= "onAdvancedCheck($event)"
-
         id="advanced"
         class="input-checkbox"
         >
@@ -47,7 +48,8 @@
     <div class="inputAndtext__container">
       <div class="input__container">
         <input
-        type="radio"
+        type="checkbox"
+        formControlName="sLine"
         [value]="car"
         id="S line"
         class="input-checkbox">
@@ -65,7 +67,8 @@
     <div class="inputAndtext__container">
       <div class="input__container">
         <input
-        type="radio"
+        type="checkbox"
+        formControlName="editionOne"
         [value]="car"
         id="edition one"
         class="input-checkbox"
