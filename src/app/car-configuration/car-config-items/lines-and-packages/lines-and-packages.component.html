@@ -50,6 +50,7 @@
         <input
         type="checkbox"
         formControlName="sLine"
+        (change)="onSlineCheck($event)"
         [value]="car"
         id="S line"
         class="input-checkbox">
@@ -69,6 +70,7 @@
         <input
         type="checkbox"
         formControlName="editionOne"
+        (change)="onEditionOneCheck($event)"
         [value]="car"
         id="edition one"
         class="input-checkbox"

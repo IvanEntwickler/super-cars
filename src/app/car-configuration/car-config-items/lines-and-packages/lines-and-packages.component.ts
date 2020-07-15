@@ -15,6 +15,7 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
   inputForm: FormGroup;
   car: Car;
   subscription: Subscription;
+  isDisabled = false;
 
   constructor(private carModelService: CarModelService, private formbuilder: FormBuilder) { }
 
@@ -29,21 +30,126 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
   }
 
-  onAdvancedCheck(event: any) {
+  onEditionOneCheck(event: any) {
+    /// variables to control the form controls
+    const basis: FormControl = this.inputForm.get('basis') as FormControl;
+    const sLine: FormControl = this.inputForm.get('sLine') as FormControl;
     const advanced: FormControl = this.inputForm.get('advanced') as FormControl;
-    const addAdvancedPrice = this.car.buyPrice + 1500;
-    const removeAdvancedPrice = this.car.buyPrice - 1500;
+
+    /// operation on car.buyPrice
+    const addPrice = this.car.buyPrice + 2500;
+    const removePrice = this.car.buyPrice - 2500;
+
+    /// operation on car.leasingPrice
+    const addLeasing = this.car.leasingPrice + 250;
+    const removeLeasing = this.car.leasingPrice - 250;
+
+    /// if input checked add number to buyPrice and leasingPrice
+    /// reset and disable other controls
     if (event.target.checked) {
-      this.car.buyPrice = addAdvancedPrice;
+      this.car.leasingPrice = addLeasing;
+      this.car.buyPrice = addPrice;
+      basis.reset({value: null, disabled: true});
+      sLine.reset({value: null, disabled: true});
+      advanced.reset({value: null, disabled: true});
     }
+    /// if input not checked remove number from buyPrice and leasingPrice
+    /// and enable controls
     if (!event.target.checked) {
-      this.car.buyPrice = removeAdvancedPrice;
+      basis.enable();
+      sLine.enable();
+      advanced.enable();
+      basis.setValue(true);
+      this.car.buyPrice = removePrice;
+      this.car.leasingPrice = removeLeasing;
+    }
+  }
+
+  onSlineCheck(event: any) {
+    /// variables to control the form controls
+    const basis: FormControl = this.inputForm.get('basis') as FormControl;
+    const advanced: FormControl = this.inputForm.get('advanced') as FormControl;
+    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+
+    /// operation on car.buyPrice
+    const addPrice = this.car.buyPrice + 2500;
+    const removePrice = this.car.buyPrice - 2500;
+
+    /// operation on car.leasingPrice
+    const addLeasing = this.car.leasingPrice + 150;
+    const removeLeasing = this.car.leasingPrice - 150;
+
+    /// if input checked add number to buyPrice and leasingPrice
+    /// reset and disable other controls
+    if (event.target.checked) {
+      this.car.buyPrice = addPrice;
+      this.car.leasingPrice = addLeasing;
+      basis.reset({value: null, disabled: true});
+      advanced.reset({value: null, disabled: true});
+      editionOne.reset({value: null, disabled: true});
+    }
+    /// if input not checked remove number from buyPrice and leasingPrice
+    /// and enable controls
+    if (!event.target.checked) {
+      basis.enable();
+      advanced.enable();
+      editionOne.enable();
+      basis.setValue(true);
+      this.car.buyPrice = removePrice;
+      this.car.leasingPrice = removeLeasing;
+    }
+  }
+
+  onAdvancedCheck(event: any) {
+    /// variables to control the form controls
+    const basis: FormControl = this.inputForm.get('basis') as FormControl;
+    const sLine: FormControl = this.inputForm.get('sLine') as FormControl;
+    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+
+    /// operation on car.buyPrice
+    const addPrice = this.car.buyPrice + 1500;
+    const removePrice = this.car.buyPrice - 1500;
+
+    /// operation on car.leasingPrice
+    const addLeasing = this.car.leasingPrice + 100;
+    const removeLeasing = this.car.leasingPrice - 100;
+
+    /// if input checked add number to buyPrice and leasingPrice
+    if (event.target.checked) {
+      this.car.buyPrice = addPrice;
+      this.car.leasingPrice = addLeasing;
+      basis.reset({value: null, disabled: true});
+      sLine.reset({value: null, disabled: true});
+      editionOne.reset({value: null, disabled: true});
+    }
+    /// if input not checked remove number from buyPrice and leasingPrice
+    /// and enable controls
+    if (!event.target.checked) {
+      basis.enable();
+      sLine.enable();
+      editionOne.enable();
+      basis.setValue(true);
+      this.car.buyPrice = removePrice;
+      this.car.leasingPrice = removeLeasing;
     }
   }
   onBasisCheck(event: any) {
-    const basis: FormControl = this.inputForm.get('basis') as FormControl;
+    /// variables to control the form controls
+    const advanced: FormControl = this.inputForm.get('advanced') as FormControl;
+    const sLine: FormControl = this.inputForm.get('sLine') as FormControl;
+    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+    /// if input checked reset other controls
     if (event.target.checked) {
+      advanced.reset({value: null, disabled: true});
+      sLine.reset({value: null, disabled: true});
+      editionOne.reset({value: null, disabled: true});
       return this.car;
+    }
+    /// if input not checked enable controls
+    if (!event.target.checked) {
+      advanced.enable();
+      sLine.enable();
+      editionOne.enable();
     }
 }
 
@@ -53,7 +159,7 @@ onSubmit() {
   console.log(this.inputForm.value);
 }
 
-
+/// prevents memory leak --- removes subscription
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
