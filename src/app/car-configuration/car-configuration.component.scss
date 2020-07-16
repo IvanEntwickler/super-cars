@@ -1,6 +1,6 @@
 .config__container{
   display:grid;
-  grid-template-rows: 10vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 15vh min-content 40vw repeat(3, min-content);
   grid-template-columns:
   [full-start] minmax(6rem, 1fr)
   [center-start]
@@ -9,6 +9,7 @@
   minmax(6rem, 1fr)
   [full-end];
   justify-content: center;
+  gap: 0.5px;
 }
 .header__text{
   @media only screen and (max-width: 400px){
@@ -26,9 +27,20 @@ app-model-slider{
 }
 
 app-car-config-items{
+  @media only screen and (max-width: 450px){
+    grid-column: 4/ 6;
+
+  }
   grid-column: center-start/col-start;
 }
 
 app-summary-view{
+  @media only screen and (max-width: 450px){
+    grid-column: 6/ 7;
+
+  }
+  position: sticky;
+  top:1px;
+  z-index: 998;
   grid-column: 7/ 8;
 }

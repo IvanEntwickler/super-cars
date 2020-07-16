@@ -1,13 +1,24 @@
-h3{
-  font-size: 2rem;
+.header__container{
+display: grid;
+grid-template-columns: auto;
+justify-items: center;
+align-items: center;
+margin-top: 2rem;
+background-color: var(--color-grey-light-4);
+  h3{
+    font-size: 2rem;
+  }
 }
+
 
 /// parent container for the template
 .line__container{
 display: grid;
+background-color: white;
+box-shadow: var(--shadow-box);
 grid-template-columns: auto;
 justify-content: center;
-margin-top: 2rem;
+padding:0.3rem;
 gap: 4rem;
 
 }
