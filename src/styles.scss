@@ -45,7 +45,8 @@ body{
   font-weight: 400;
   line-height:1.6;
   background-image: linear-gradient(to right bottom, var(--color-grey-light-1), var(--color-grey-light-4));
-  background-size:cover;
+  background-size:contain;
   background-repeat: no-repeat;
+  width: 100vw;
   min-height: 400vh;
 }

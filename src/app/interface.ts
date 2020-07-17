@@ -8,6 +8,7 @@ export interface Car {
   imageUrl?: string[];
   videoUrl?: string;
   id?: number;
+  extras?: number;
 }
 
 

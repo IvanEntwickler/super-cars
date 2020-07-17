@@ -93,21 +93,75 @@
   <h3>Linien & Pakete</h3>
 </div>
 <div class="extras__container">
-  <div class="extras">
-    <label for="interieur-s-line"></label>
-    <input>
-    <img src="" alt="interieur-s-line">
-    <span class="extras-price"></span>
-    <ul class="features-item__list">
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-      <li class="features-item"></li>
-    </ul>
+  <div class="extra-header">
+    <h3 >S line</h3>
   </div>
+  <div class="extras">
+    <label for="interieur-s-line">Interieur S line</label>
+    <input
+    type="checkbox"
+    class="extra-input"
+    id="interieur-s-line"
+    formControlName="interieurSline"
+    (change)= "onExtraSline($event)"
+    >
+    <img
+    class="extra-image"
+    src="https://mediaservice.audi.com/media/cdb/data/59f3fa4d-8a00-44c5-a73f-f886b7f92d17.jpg"
+    alt="line-package">
+    <span class="extras-price">2583 EUR</span>
+  </div>
+  <div class="extra-header">
+    <h3 >Design Pakete</h3>
+  </div>
+  <div class="extras">
+    <label for="interieur design">Interieur design selection</label>
+    <input
+    type="checkbox"
+    class="extra-input"
+    id="interieur design"
+    formControlName="interieurDesign"
+    (change)= "onExtraDesign($event)"
+    >
+    <img
+    class="extra-image"
+    src="https://mediaservice.audi.com/media/cdb/data/59f3fa4d-8a00-44c5-a73f-f886b7f92d17.jpg"
+    alt="line-package">
+    <span class="extras-price">2583 EUR</span>
+  </div>
+  <div class="extra-header">
+    <h3 >Ausstattungspakete</h3>
+  </div>
+  <div class="extras">
+    <label for="advanced selction">advanced selction</label>
+    <input
+    type="checkbox"
+    class="extra-input"
+    id="advanced selction"
+    formControlName="packageOne"
+    (change)= "onExtraPackageOne($event)"
+    >
+    <img
+    class="extra-image"
+    src="https://mediaservice.audi.com/media/cdb/data/d2094228-5dc7-4a17-90f4-fc99853dd112.jpg"
+    alt="line-package">
+    <span class="extras-price">2388 EUR</span>
+  </div>
+  <div class="extras">
+    <label for="technology selection">Technology selection</label>
+    <input
+    type="checkbox"
+    class="extra-input"
+    id="technology selection"
+    formControlName="packageTwo"
+    (change)= "onExtraPackageTwo($event)"
+    >
+    <img
+    class="extra-image"
+    src="https://mediaservice.audi.com/media/cdb/data/20a9b8ac-fc62-4533-b6e5-303b85a060b0.jpg"
+    alt="line-package">
+    <span class="extras-price">3704 EUR</span>
+  </div>
+
 </div>
 </form>

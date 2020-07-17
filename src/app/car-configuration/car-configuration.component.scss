@@ -2,17 +2,17 @@
   display:grid;
   grid-template-rows: 15vh min-content 40vw repeat(3, min-content);
   grid-template-columns:
-  [full-start] minmax(6rem, 1fr)
+  [full-start] minmax(20rem, 1fr)
   [center-start]
-  repeat(8, [col-start] minmax(min-content, 20rem) [col-end])
+  repeat(8, [col-start] minmax(min-content, 15rem) [col-end])
   [center-end]
-  minmax(6rem, 1fr)
+  minmax(20rem, 1fr)
   [full-end];
   justify-content: center;
   gap: 0.5px;
 }
 .header__text{
-  @media only screen and (max-width: 400px){
+  @media only screen and (max-width: 25em){
     font-size: 1.8rem;
   }
   justify-self: center;
@@ -27,7 +27,7 @@ app-model-slider{
 }
 
 app-car-config-items{
-  @media only screen and (max-width: 450px){
+  @media only screen and (max-width: 28em){
     grid-column: 4/ 6;
 
   }
@@ -35,8 +35,8 @@ app-car-config-items{
 }
 
 app-summary-view{
-  @media only screen and (max-width: 450px){
-    grid-column: 6/ 7;
+  @media only screen and (max-width: 28em){
+    grid-column: 6/ 7 ;
 
   }
   position: sticky;

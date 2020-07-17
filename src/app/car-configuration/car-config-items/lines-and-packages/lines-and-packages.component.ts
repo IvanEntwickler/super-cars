@@ -25,7 +25,11 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
       basis: this.formbuilder.control(true),
       advanced: this.formbuilder.control(null),
       sLine: this.formbuilder.control(null),
-      editionOne: this.formbuilder.control(null)
+      editionOne: this.formbuilder.control(null),
+      interieurSline: this.formbuilder.control(null),
+      interieurDesign: this.formbuilder.control(null),
+      packageOne: this.formbuilder.control(null),
+      packageTwo: this.formbuilder.control(null),
     });
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
   }
@@ -151,6 +155,39 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
       sLine.enable();
       editionOne.enable();
     }
+}
+
+
+//// input events for Extras
+
+onExtraSline(event) {
+const interieurSline: FormControl = this.inputForm.get('interieurSline') as FormControl;
+/// operation on car.leasingPrice
+const addExtra = this.car.extras + 2583;
+const removeExtra = this.car.extras - 2583;
+
+/// if input checked add number to extras
+if (event.target.checked) {
+  this.car.extras = addExtra;
+}
+/// if input not checked remove number from extras
+/// and reset control
+if (!event.target.checked) {
+  interieurSline.reset();
+  this.car.extras = removeExtra;
+}
+}
+
+onExtraDesign(event) {
+
+}
+
+onExtraPackageOne(event) {
+
+}
+
+onExtraPackageTwo(event) {
+
 }
 
 
