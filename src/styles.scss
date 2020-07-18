@@ -17,9 +17,16 @@
   --border-line: 1px solid var(--color-grey-dark-1);
 }
 
-$bp-largest: 60em; // = 960 px
 $bp-large: 68.75em; // = 1100 px
 $bp-medium: 56.25em; // = 900 px
+$bp-medium-small: 43.75em; // = 700 px
+$bp-before-small1: 39em; // = 612 px
+$bp-before-small2: 32em; // = 512 px
+$bp-small: 26.25em; // = 400 px
+$bp-very-small: 23.75em; // =  380 px
+$bp-smallest: 21em; // =  336 px
+
+
 
 *{
   margin:0;
@@ -36,7 +43,28 @@ html{
   box-sizing:border-box;
   font-size: 62.5;
   @media only screen and (max-width: $bp-large){
+    font-size: 75%;
+  }
+  @media only screen and (max-width: $bp-medium){
+    font-size: 72%;
+  }
+  @media only screen and (max-width: $bp-medium-small){
+    font-size: 65%;
+  }
+  @media only screen and (max-width: $bp-before-small1){
+    font-size: 55%;
+  }
+  @media only screen and (max-width: $bp-before-small2){
     font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-small){
+    font-size: 47.5%;
+  }
+  @media only screen and (max-width: $bp-very-small){
+    font-size: 42.5%;
+  }
+  @media only screen and (max-width: $bp-smallest){
+    font-size: 37.5%;
   }
 }
 

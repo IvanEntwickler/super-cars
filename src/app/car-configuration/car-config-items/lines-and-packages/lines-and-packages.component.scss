@@ -109,3 +109,25 @@ h3{
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/// submit-button
+
+.button__container{
+  display:grid;
+  grid-template-columns: auto;
+  height: 6rem;
+  justify-items: self-end;
+  align-items: center;
+}
+
+.lines-packages__submit{
+  padding: 1rem;
+  border: none;
+  background-color: black;
+  color: white;
+
+  &:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Car } from './../../../interface';
@@ -17,7 +18,12 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
   subscription: Subscription;
   isDisabled = false;
 
-  constructor(private carModelService: CarModelService, private formbuilder: FormBuilder) { }
+  constructor(
+    private carModelService: CarModelService,
+    private formbuilder: FormBuilder,
+    // private router: Router,
+    // private route: ActivatedRoute
+    ) { }
 
   // getting the car State
   ngOnInit() {
@@ -45,8 +51,8 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
     const removePrice = this.car.buyPrice - 2500;
 
     /// operation on car.leasingPrice
-    const addLeasing = this.car.leasingPrice + 250;
-    const removeLeasing = this.car.leasingPrice - 250;
+    const addLeasing = this.car.leasingPrice + 50;
+    const removeLeasing = this.car.leasingPrice - 50;
 
     /// if input checked add number to buyPrice and leasingPrice
     /// reset and disable other controls
@@ -80,8 +86,8 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
     const removePrice = this.car.buyPrice - 2500;
 
     /// operation on car.leasingPrice
-    const addLeasing = this.car.leasingPrice + 150;
-    const removeLeasing = this.car.leasingPrice - 150;
+    const addLeasing = this.car.leasingPrice + 40;
+    const removeLeasing = this.car.leasingPrice - 40;
 
     /// if input checked add number to buyPrice and leasingPrice
     /// reset and disable other controls
@@ -115,8 +121,8 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
     const removePrice = this.car.buyPrice - 1500;
 
     /// operation on car.leasingPrice
-    const addLeasing = this.car.leasingPrice + 100;
-    const removeLeasing = this.car.leasingPrice - 100;
+    const addLeasing = this.car.leasingPrice + 30;
+    const removeLeasing = this.car.leasingPrice - 30;
 
     /// if input checked add number to buyPrice and leasingPrice
     if (event.target.checked) {
@@ -162,38 +168,112 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
 
 onExtraSline(event) {
 const interieurSline: FormControl = this.inputForm.get('interieurSline') as FormControl;
-/// operation on car.leasingPrice
+const interieurDesign: FormControl = this.inputForm.get('interieurDesign') as FormControl;
+/// operation on car.extras
 const addExtra = this.car.extras + 2583;
 const removeExtra = this.car.extras - 2583;
 
-/// if input checked add number to extras
+/// operation on car.leasingPrice
+const addLeasing = this.car.leasingPrice + 10;
+const removeLeasing = this.car.leasingPrice - 10;
+
+/// if input checked add number to extras and disables other package
 if (event.target.checked) {
+  interieurDesign.reset({value: null, disabled: true});
+  this.car.leasingPrice = addLeasing;
   this.car.extras = addExtra;
 }
 /// if input not checked remove number from extras
-/// and reset control
+/// and reset and enables control
 if (!event.target.checked) {
   interieurSline.reset();
+  interieurDesign.enable();
   this.car.extras = removeExtra;
+  this.car.leasingPrice = removeLeasing;
 }
 }
 
 onExtraDesign(event) {
+  const interieurDesign: FormControl = this.inputForm.get('interieurDesign') as FormControl;
+  const interieurSline: FormControl = this.inputForm.get('interieurSline') as FormControl;
+  /// operation on car.leasingPrice
+  const addExtra = this.car.extras + 2583;
+  const removeExtra = this.car.extras - 2583;
 
+  /// operation on car.leasingPrice
+  const addLeasing = this.car.leasingPrice + 10;
+  const removeLeasing = this.car.leasingPrice - 10;
+
+  /// if input checked add number to extras and disables other package
+  if (event.target.checked) {
+    interieurSline.reset({value: null, disabled: true});
+    this.car.leasingPrice = addLeasing;
+    this.car.extras = addExtra;
+  }
+  /// if input not checked remove number from extras
+  /// and reset enables control
+  if (!event.target.checked) {
+    interieurDesign.reset();
+    interieurSline.enable();
+    this.car.extras = removeExtra;
+    this.car.leasingPrice = removeLeasing;
+  }
 }
 
 onExtraPackageOne(event) {
+  const packageOne: FormControl = this.inputForm.get('packageOne') as FormControl;
+  /// operation on car.extras
+  const addExtra = this.car.extras + 2388;
+  const removeExtra = this.car.extras - 2388;
 
+  /// operation on car.leasingPrice
+  const addLeasing = this.car.leasingPrice + 10;
+  const removeLeasing = this.car.leasingPrice - 10;
+
+  /// if input checked add number to extras
+  if (event.target.checked) {
+    this.car.extras = addExtra;
+    this.car.leasingPrice = addLeasing;
+  }
+  /// if input not checked remove number from extras
+  /// and reset control
+  if (!event.target.checked) {
+    packageOne.reset();
+    this.car.extras = removeExtra;
+    this.car.leasingPrice = removeLeasing;
+  }
 }
 
 onExtraPackageTwo(event) {
+  const packageTwo: FormControl = this.inputForm.get('packageTwo') as FormControl;
+  /// operation on car.extras
+  const addExtra = this.car.extras + 3704;
+  const removeExtra = this.car.extras - 3704;
 
+  /// operation on car.leasingPrice
+  const addLeasing = this.car.leasingPrice + 15;
+  const removeLeasing = this.car.leasingPrice - 15;
+
+  /// if input checked add number to extras
+  if (event.target.checked) {
+    this.car.extras = addExtra;
+    this.car.leasingPrice = addLeasing;
+  }
+  /// if input not checked remove number from extras
+  /// and reset control
+  if (!event.target.checked) {
+    packageTwo.reset();
+    this.car.extras = removeExtra;
+    this.car.leasingPrice = removeLeasing;
+  }
 }
 
-
+// onClickAntrieb() {
+// this.router.navigate(['../antrieb'], {relativeTo: this.route});
+// }
 
 onSubmit() {
-  console.log(this.inputForm.value);
+  console.log(this.inputForm);
 }
 
 /// prevents memory leak --- removes subscription
