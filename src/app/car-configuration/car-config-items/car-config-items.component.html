@@ -1,4 +1,4 @@
-<div>
+<form [formGroup] ="configForm" ngSubmit="onSubmit()">
   <router-outlet></router-outlet>
-</div>
-
+  <button class="form-submit" type="submit">Submit</button>
+</form>

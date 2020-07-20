@@ -1,7 +1,7 @@
 <div class="header__container">
   <h3>Ausstattungslinien</h3>
 </div>
-<form [formGroup]="inputForm" ngSubmit="onSubmit()">
+<form [formGroup]="inputForm">
 <div class="line__container">
   <div class="line-set__container">
     <img src="{{car.imageUrl[0]}}" alt="line-pic" class="car-image">
@@ -9,7 +9,7 @@
       <div class="input__container">
         <input
         type="checkbox"
-        formControlName="basis"
+        formControlName="configForm.inputForm.basis"
         (change) = "onBasisCheck($event)"
         [value]="car"
         id="Basis"
@@ -31,7 +31,7 @@
         <input
         type="checkbox"
         (change) = "onAdvancedCheck($event)"
-        formControlName="advanced"
+        formControlName='inputForm.advanced'
         [value]="car"
         id="advanced"
         class="input-checkbox"
@@ -51,7 +51,7 @@
       <div class="input__container">
         <input
         type="checkbox"
-        formControlName="sLine"
+        formControlName='inputForm.sLine'
         (change)="onSlineCheck($event)"
         [value]="car"
         id="S line"
@@ -71,7 +71,7 @@
       <div class="input__container">
         <input
         type="checkbox"
-        formControlName="editionOne"
+        formControlName="configForm.get('inputForm.editionOne')"
         (change)="onEditionOneCheck($event)"
         [value]="car"
         id="edition one"
@@ -102,7 +102,7 @@
     type="checkbox"
     class="extra-input"
     id="interieur-s-line"
-    formControlName="interieurSline"
+    formControlName='inputForm.interieurSline'
     (change)= "onExtraSline($event)"
     >
     <img
@@ -120,7 +120,7 @@
     type="checkbox"
     class="extra-input"
     id="interieur design"
-    formControlName="interieurDesign"
+    formControlName='inputForm.interieurDesign'
     (change)= "onExtraDesign($event)"
     >
     <img
@@ -138,7 +138,7 @@
     type="checkbox"
     class="extra-input"
     id="advanced selction"
-    formControlName="packageOne"
+    formControlName='inputForm.packageOne'
     (change)= "onExtraPackageOne($event)"
     >
     <img
@@ -153,7 +153,7 @@
     type="checkbox"
     class="extra-input"
     id="technology selection"
-    formControlName="packageTwo"
+    formControlName='inputForm.packageTwo'
     (change)= "onExtraPackageTwo($event)"
     >
     <img
@@ -164,6 +164,6 @@
   </div>
 </div>
 <div class="button__container">
-  <button class="lines-packages__submit" type="submit">Weiter zu Antrieb</button>
+  <button class="lines-packages__submit"(click)= "onClickAntrieb()">Weiter zu Antrieb</button>
 </div>
 </form>

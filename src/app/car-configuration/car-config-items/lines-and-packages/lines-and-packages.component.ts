@@ -1,9 +1,10 @@
+import { FormGroup, FormControl } from '@angular/forms';
+import { ConfigFormService } from './../../../config-form.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Car } from './../../../interface';
 import { CarModelService } from './../../../car-model.service';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 
@@ -13,31 +14,24 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
   styleUrls: ['./lines-and-packages.component.scss']
 })
 export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
-  inputForm: FormGroup;
   car: Car;
   subscription: Subscription;
-  isDisabled = false;
+  formsub: Subscription;
+  inputForm: FormGroup;
 
   constructor(
     private carModelService: CarModelService,
-    private formbuilder: FormBuilder,
-    // private router: Router,
-    // private route: ActivatedRoute
+    public configFormService: ConfigFormService,
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
-  // getting the car State
+
   ngOnInit() {
-    this.inputForm = this.formbuilder.group({
-      basis: this.formbuilder.control(true),
-      advanced: this.formbuilder.control(null),
-      sLine: this.formbuilder.control(null),
-      editionOne: this.formbuilder.control(null),
-      interieurSline: this.formbuilder.control(null),
-      interieurDesign: this.formbuilder.control(null),
-      packageOne: this.formbuilder.control(null),
-      packageTwo: this.formbuilder.control(null),
-    });
+    /// getting the car State
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
+    /// getting the form
+    this.formsub = this.configFormService.configForm$.subscribe(form => this.inputForm = form);
   }
 
   onEditionOneCheck(event: any) {
@@ -76,10 +70,12 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
   }
 
   onSlineCheck(event: any) {
+    /// variables to control the form group from nested formgroup in service
+    const getInputForm: FormGroup = this.configFormService.configForm.getValue();
     /// variables to control the form controls
-    const basis: FormControl = this.inputForm.get('basis') as FormControl;
-    const advanced: FormControl = this.inputForm.get('advanced') as FormControl;
-    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+    const basis: FormControl = getInputForm.get('inputForm.basis') as FormControl;
+    const advanced: FormControl = getInputForm.get('inputForm.advanced') as FormControl;
+    const editionOne: FormControl = getInputForm.get('inputForm.editionOne') as FormControl;
 
     /// operation on car.buyPrice
     const addPrice = this.car.buyPrice + 2500;
@@ -111,10 +107,12 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
   }
 
   onAdvancedCheck(event: any) {
+    /// variables to control the form group from nested formgroup in service
+    const getInputForm: FormGroup = this.configFormService.configForm.getValue();
     /// variables to control the form controls
-    const basis: FormControl = this.inputForm.get('basis') as FormControl;
-    const sLine: FormControl = this.inputForm.get('sLine') as FormControl;
-    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+    const basis: FormControl = getInputForm.get('inputForm.basis') as FormControl;
+    const sLine: FormControl = getInputForm.get('inputForm.sLine') as FormControl;
+    const editionOne: FormControl = getInputForm.get('inputForm.editionOne') as FormControl;
 
     /// operation on car.buyPrice
     const addPrice = this.car.buyPrice + 1500;
@@ -144,10 +142,12 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
     }
   }
   onBasisCheck(event: any) {
+    /// variables to control the form group from nested formgroup in service
+    const getInputForm: FormGroup = this.configFormService.configForm.getValue();
     /// variables to control the form controls
-    const advanced: FormControl = this.inputForm.get('advanced') as FormControl;
-    const sLine: FormControl = this.inputForm.get('sLine') as FormControl;
-    const editionOne: FormControl = this.inputForm.get('editionOne') as FormControl;
+    const advanced: FormControl = getInputForm.get('inputForm.advanced') as FormControl;
+    const sLine: FormControl = getInputForm.get('inputForm.sLine') as FormControl;
+    const editionOne: FormControl = getInputForm.get('inputForm.editionOne') as FormControl;
     /// if input checked reset other controls
     if (event.target.checked) {
       advanced.reset({value: null, disabled: true});
@@ -167,8 +167,11 @@ export class LinesAndPackagesComponent implements OnInit, OnDestroy  {
 //// input events for Extras
 
 onExtraSline(event) {
-const interieurSline: FormControl = this.inputForm.get('interieurSline') as FormControl;
-const interieurDesign: FormControl = this.inputForm.get('interieurDesign') as FormControl;
+/// variables to control the form group from nested formgroup in service
+const getInputForm: FormGroup = this.configFormService.configForm.getValue();
+/// variables to control the form controls
+const interieurSline: FormControl = getInputForm.get('inputForm.interieurSline') as FormControl;
+const interieurDesign: FormControl = getInputForm.get('inputForm.interieurDesign') as FormControl;
 /// operation on car.extras
 const addExtra = this.car.extras + 2583;
 const removeExtra = this.car.extras - 2583;
@@ -194,8 +197,11 @@ if (!event.target.checked) {
 }
 
 onExtraDesign(event) {
-  const interieurDesign: FormControl = this.inputForm.get('interieurDesign') as FormControl;
-  const interieurSline: FormControl = this.inputForm.get('interieurSline') as FormControl;
+  /// variables to control the form group from nested formgroup in service
+  const getInputForm: FormGroup = this.configFormService.configForm.getValue() as FormGroup;
+  /// variables to control the form controls
+  const interieurDesign: FormControl = getInputForm.get('inputForm.interieurDesign') as FormControl;
+  const interieurSline: FormControl = getInputForm.get('inputForm.interieurSline') as FormControl;
   /// operation on car.leasingPrice
   const addExtra = this.car.extras + 2583;
   const removeExtra = this.car.extras - 2583;
@@ -221,7 +227,10 @@ onExtraDesign(event) {
 }
 
 onExtraPackageOne(event) {
-  const packageOne: FormControl = this.inputForm.get('packageOne') as FormControl;
+  /// variables to control the form group from nested formgroup in service
+  const getInputForm: FormGroup = this.configFormService.configForm.getValue();
+  /// variables to control the form controls
+  const packageOne: FormControl = getInputForm.get('inputForm.packageOne') as FormControl;
   /// operation on car.extras
   const addExtra = this.car.extras + 2388;
   const removeExtra = this.car.extras - 2388;
@@ -245,7 +254,10 @@ onExtraPackageOne(event) {
 }
 
 onExtraPackageTwo(event) {
-  const packageTwo: FormControl = this.inputForm.get('packageTwo') as FormControl;
+  /// variables to control the form group from nested formgroup in service
+  const getInputForm: FormGroup = this.configFormService.configForm.getValue();
+  /// variables to control the form controls
+  const packageTwo: FormControl = getInputForm.get('inputForm.packageTwo') as FormControl;
   /// operation on car.extras
   const addExtra = this.car.extras + 3704;
   const removeExtra = this.car.extras - 3704;
@@ -268,17 +280,14 @@ onExtraPackageTwo(event) {
   }
 }
 
-// onClickAntrieb() {
-// this.router.navigate(['../antrieb'], {relativeTo: this.route});
-// }
-
-onSubmit() {
-  console.log(this.inputForm);
+onClickAntrieb() {
+  this.router.navigate(['../antrieb'], {relativeTo: this.route});
 }
 
 /// prevents memory leak --- removes subscription
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.formsub.unsubscribe();
   }
 
 }
