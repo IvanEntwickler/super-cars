@@ -10,7 +10,6 @@ export class ConfigFormService {
   /// creating a shareable resource for multiple forms
   configForm: BehaviorSubject<FormGroup | undefined> =
   new BehaviorSubject(this.formbuilder.group({
-    inputForm: this.formbuilder.group({
       basis: this.formbuilder.control(true),
       advanced: this.formbuilder.control(null),
       sLine: this.formbuilder.control(null),
@@ -19,14 +18,13 @@ export class ConfigFormService {
       interieurDesign: this.formbuilder.control(null),
       packageOne: this.formbuilder.control(null),
       packageTwo: this.formbuilder.control(null),
-    }),
   }));
   configForm$: Observable<FormGroup> = this.configForm.asObservable();
   constructor(private formbuilder: FormBuilder) { }
 
 
 
-  /// Lines & Packages Component, inputForm
+  /// Lines & Packages Component, configForm
   /// Drive Component
   /// interieur
   /// exterieur
