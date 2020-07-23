@@ -144,6 +144,10 @@
   display:flex;
   flex: 0 0 50%;
   margin: auto;
+  &:hover{
+    background-color: black;
+    fill: white;
+  }
 
 
   .anchor-icon{
@@ -157,5 +161,8 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.9rem;
+    &:hover{
+      color: white;
+    }
   }
 }

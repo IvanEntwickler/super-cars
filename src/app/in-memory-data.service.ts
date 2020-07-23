@@ -21,54 +21,52 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 1,
       priceRange: 85000,
       extras: 691,
+      fuel1: 'Elekto',
+      fuel2: null,
+      driveType1: null,
+      driveType2: null,
       motor: [
         {
           name: '50 quattro',
           price: 69100,
           leasing: 514,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'advanced 50 quattro',
           price: 70500,
           leasing: 540,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: true,
         },
         {
           name: 'S line 50 quattro',
           price: 72000,
           leasing: 560,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: '55 quattro',
           price: 81000,
           leasing: 600,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'advanced 55 quattro',
           price: 82200,
           leasing: 610,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: 'advanced 55 quattro',
           price: 83700,
           leasing: 620,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
       ]
     },
@@ -83,54 +81,52 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 2,
       priceRange: 85000,
       extras: 713,
+      fuel1: 'Elekto',
+      fuel2: null,
+      driveType1: null,
+      driveType2: null,
       motor: [
         {
           name: '50 quattro',
           price: 71350,
           leasing: 531,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'advanced 50 quattro',
           price: 72750,
           leasing: 545,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: 'S line 50 quattro',
           price: 74350,
           leasing: 565,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: true,
         },
         {
           name: '55 quattro',
           price: 83550,
           leasing: 630,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'advanced 55 quattro',
           price: 85055,
           leasing: 650,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: 'advanced 55 quattro',
           price: 86700,
           leasing: 660,
-          fuel1: 'Elekto',
-          fuel2: '/',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
       ]
     },
@@ -143,166 +139,150 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 3,
       priceRange: 25000,
       extras: 500,
+      fuel1: 'Bezin',
+      fuel2: 'Diesel',
+      driveType1: 'Schaltgetriebe',
+      driveType2: 'Automatik',
       motor: [
         {
           name: '25 TFSI Schaltgetriebe',
           price: 20300,
           leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'advanced 25 TFSI Schaltgetriebe',
           price: 21201,
           leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: '30 TFSI Schaltgetriebe',
           price: 21250,
           leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: '25 TFSI S tronic',
           price: 21689,
           leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'S line 25 TFSI Schaltgetriebe',
           price: 22273,
           leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: 'advanced 30 TFSI Schaltgetriebe',
           price: 22420,
           leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: 'advanced 25 TFSI S tronic',
           price: 22858,
           leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: '30 TFSI S tronic',
           price: 22907,
           leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'S line 30 TFSI Schaltgetriebe',
           price: 23492,
           leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: 'S line 25 TFSI S tronic',
           price: 23931,
           leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: 'advanced 30 TFSI S tronic',
           price: 24077,
           leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: '35 TFSI S tronic',
           price: 25100,
           leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
+          lineType: 'Basis',
+          mostWanted: false,
         },
         {
           name: 'S line 30 TFSI S tronic',
           price: 25149,
           leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: 'advanced 35 TFSI S tronic',
           price: 26270,
           leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
+          lineType: 'advanced',
+          mostWanted: false,
         },
         {
           name: 'S line 35 TFSI S tronic',
           price: 27342,
           leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: true,
         },
         {
           name: 'edition one 30 TFSI Schaltgetriebe',
           price: 27869,
           leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
+          lineType: 'editionOne',
+          mostWanted: false,
         },
         {
           name: 'S line 40 TFSI S tronic',
           price: 29048,
           leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
+          lineType: 'sLine',
+          mostWanted: false,
         },
         {
           name: 'edition one 30 TFSI S tronic',
           price: 29526,
           leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
+          lineType: 'editionOne',
+          mostWanted: false,
         },
         {
           name: 'edition one 35 TFSI S tronic',
           price: 30744,
           leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
+          lineType: 'editionOne',
+          mostWanted: false,
         },
         {
           name: 'edition one 40 TFSI S tronic',
           price: 31768,
           leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
+          lineType: 'editionOne',
+          mostWanted: false,
         },
       ]
     },
@@ -315,168 +295,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 4,
       priceRange: 25000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A3',
@@ -487,168 +305,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 5,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     /// motor pricing is applied till here
     {
@@ -670,168 +326,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 7,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A3',
@@ -842,371 +336,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 8,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
-    },
-    {
-      model: 'S3',
-      name: 'Cabriolet TSFI',
-      buyPrice: 52300,
-      leasingPrice: 404,
-      imageUrl: [''],
-      id: 9,
-      priceRange: 55000,
-      extras: 500
-    },
-    {
-      model: 'RS 3',
-      name: 'Sportback',
-      buyPrice: 56000,
-      leasingPrice: 444,
-      imageUrl: [''],
-      id: 10,
-      priceRange: 85000,
-      extras: 500
-    },
-    {
-      model: 'RS 3',
-      name: 'Limousine',
-      buyPrice: 58000,
-      leasingPrice: 465,
-      imageUrl: [''],
-      id: 11,
-      priceRange: 85000,
-      extras: 500
-    },
-    {
-      model: 'A4',
-      name: 'Limousine',
-      buyPrice: 33600,
-      leasingPrice: 267,
-      imageUrl: [''],
-      id: 12,
-      priceRange:
-      55000,
-      extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A4',
@@ -1217,168 +346,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 13,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A4',
@@ -1389,32 +356,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 14,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-      ]
     },
     {
       model: 'A4',
@@ -1465,168 +406,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 19,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A5',
@@ -1637,168 +416,6 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 20,
       priceRange: 55000,
       extras: 500,
-      motor: [
-        {
-          name: '25 TFSI Schaltgetriebe',
-          price: 20300,
-          leasing: 161,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'advanced 25 TFSI Schaltgetriebe',
-          price: 21201,
-          leasing: 170,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI Schaltgetriebe',
-          price: 21250,
-          leasing: 172,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: '25 TFSI S tronic',
-          price: 21689,
-          leasing: 175,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 25 TFSI Schaltgetriebe',
-          price: 22273,
-          leasing: 180,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI Schaltgetriebe',
-          price: 22420,
-          leasing: 181,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'advanced 25 TFSI S tronic',
-          price: 22858,
-          leasing: 184,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '30 TFSI S tronic',
-          price: 22907,
-          leasing: 186,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI Schaltgetriebe',
-          price: 23492,
-          leasing: 188,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'S line 25 TFSI S tronic',
-          price: 23931,
-          leasing: 190,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 30 TFSI S tronic',
-          price: 24077,
-          leasing: 193,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: '35 TFSI S tronic',
-          price: 25100,
-          leasing: 196,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'Basis'
-        },
-        {
-          name: 'S line 30 TFSI S tronic',
-          price: 25149,
-          leasing: 198,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'advanced 35 TFSI S tronic',
-          price: 26270,
-          leasing: 225,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'advanced'
-        },
-        {
-          name: 'S line 35 TFSI S tronic',
-          price: 27342,
-          leasing: 230,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI Schaltgetriebe',
-          price: 27869,
-          leasing: 240,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'S line 40 TFSI S tronic',
-          price: 29048,
-          leasing: 255,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'sLine'
-        },
-        {
-          name: 'edition one 30 TFSI S tronic',
-          price: 29526,
-          leasing: 260,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 35 TFSI S tronic',
-          price: 30744,
-          leasing: 270,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-        {
-          name: 'edition one 40 TFSI S tronic',
-          price: 31768,
-          leasing: 284,
-          fuel1: 'Bezin',
-          fuel2: 'Diesel',
-          lineType: 'editionOne'
-        },
-      ]
     },
     {
       model: 'A5',

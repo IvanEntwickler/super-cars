@@ -9,6 +9,10 @@ export interface Car {
   videoUrl?: string;
   id?: number;
   extras?: number;
+  fuel1?: string;
+  fuel2?: string;
+  driveType1?: string | null;
+  driveType2?: string | null;
   motor?: any[];
 }
 
