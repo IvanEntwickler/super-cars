@@ -1,56 +1,163 @@
-/// parent container
-.container{
+/// header
 
+.header__container{
+  display:grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--color-grey-light-4);
+
+  h3{
+    font-size: 2rem;
+  }
 }
 
-/// headers + text
+/// first parent container for config
+.drive-config__container{
+  display: grid;
+  background-color: white;
+  box-shadow: var(--shadow-box);
+  grid-template-columns: auto;
+  justify-content: center;
+  padding:1rem;
+  width: 50vw;
+  gap: 3rem;
 
-.header{
-
+  label{
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
 }
+
+/// intro-text
 
 .intro-text{
-
+  font-size: 1.5rem;
 }
 
 /// select
 
 .select__container{
+  &:hover{
+    cursor: pointer;
+  }
 
 }
 
 /// input checkboxes
 
+.input__container{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
 .drive1__container{
+  display: flex;
+  align-items: center;
 
 }
 
 .drive2__container{
-
+  display: flex;
+  align-items: center;
 }
+
 
 .fuel1__container{
-
+  display: flex;
+  align-items: center;
 }
+
 
 .fuel2__container{
-
+  display: flex;
+  align-items: center;
 }
 
-/// drive-cards
+
+.drive-input{
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  margin-right: 1rem;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+/// second header
+
+.header2__container{
+  display:grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--color-grey-light-4);
+  width: 41vw;
+
+  h3{
+    font-size: 2rem;
+  }
+}
+/// second parent container for drive cards
 
 .drive-cards__container{
-
+  display: grid;
+  background-color: white;
+  box-shadow: var(--shadow-box);
+  grid-template-columns: auto;
+  justify-items: center;
+  padding:0.3rem;
+  gap: 0.5rem;
+  width: 41vw;
 }
 
 .drive-cards{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: var(--color-grey-light-3);
+  width: 40vw;
+  &:hover{
+    cursor: pointer;
+  }
+}
 
+.drive-cards-mostWanted{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: rgb(26, 226, 216);
+  width: 40vw;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.drive-card-input{
+  display: grid;
+  justify-self: start;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .car-name{
-
+  display: grid;
+  justify-self: center;
+  font-size: 1.5rem;
 }
 
-.car-name-mostWanted{
-  color: blue;
+.car-price{
+  display: grid;
+  justify-self: end;
+  font-size: 1.5rem;
+
 }

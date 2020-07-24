@@ -1,11 +1,13 @@
-<div class="container">
-  <h3 class="header">Alle Antriebe im Überblick</h3>
+<div class="header__container">
+  <h3>Alle Antriebe im Überblick</h3>
+</div>
+<div class="drive-config__container">
   <span class="intro-text">
     Alle Antriebsvarianten, Daten zum Stromverbrauch
     sowie Beschleunigung und Höchstgeschwindigkeit für Ihren
-    {{car.model}} | {{car.name}}.
+    <strong>{{car.model}} | {{car.name}}</strong>.
   </span>
-  <label for="extra-select">Ausschattungslinien</label>
+  <label for="extra-select">Austattungslinien</label>
   <select class="select__container" name="extra" id="extra-select">
     <option>Alle</option>
     <option selected>am meisten gekauft</option>
@@ -14,33 +16,39 @@
     <option>S line</option>
     <option>edition one</option>
   </select>
-  <div class="drive1__container" *ngIf="car.driveType1 !== null">
-    <label for="drive1">{{car.driveType1}}</label>
-    <input  type="checkbox" id="drive1"/>
-  </div>
-  <div class="drive2__container" *ngIf="car.driveType1 !== null">
-    <label for="drive2">{{car.driveType2}}</label>
-    <input type="checkbox" id="drive2"/>
-  </div>
-  <div class="fuel1__container" *ngIf="car.fuel1 !== null">
-    <label for="fuel1">{{car.fuel1}}</label>
-    <input type="checkbox" id="fuel1"/>
-  </div>
-  <div class="fuel2__container" *ngIf="car.fuel2 !== null">
-    <label for="fuel2">{{car.fuel2}}</label>
-    <input type="checkbox" id="fuel2"/>
-  </div>
-  <div class="drive-cards__container">
-    <h3>Antrieb</h3>
-    <div class="drive-cards" *ngFor="let car of car.motor; let i = index">
-      <input type="checkbox" >
-      <span
-      class="car-name"
-      [ngClass]="{'car-name': car.mostWanted === false, 'car-name-mostWanted': car.mostWanted === true}"
-      >{{car.name}}</span>
-      <span>{{car.price}},00 EUR</span>
+  <div class="input__container">
+    <div class="drive1__container" *ngIf="car.driveType1 !== null">
+      <input class="drive-input" type="checkbox" id="drive1"/>
+      <label for="drive1">{{car.driveType1}}</label>
+    </div>
+    <div class="drive2__container" *ngIf="car.driveType1 !== null">
+      <input class="drive-input" type="checkbox" id="drive2"/>
+      <label for="drive2">{{car.driveType2}}</label>
+    </div>
+    <div class="fuel1__container" *ngIf="car.fuel1 !== null">
+      <input class="drive-input" type="checkbox" id="fuel1"/>
+      <label for="fuel1">{{car.fuel1}}</label>
+    </div>
+    <div class="fuel2__container" *ngIf="car.fuel2 !== null">
+      <input class="drive-input" type="checkbox" id="fuel2"/>
+      <label for="fuel2">{{car.fuel2}}</label>
     </div>
   </div>
 </div>
+<div class="header2__container">
+  <h3>Antrieb</h3>
+</div>
+<div class="drive-cards__container">
+  <div
+  class="drive-cards"
+  *ngFor="let car of car.motor; let i = index"
+  [ngClass]="{'drive-cards': car.mostWanted === false, 'drive-cards-mostWanted': car.mostWanted === true}"
+  >
+    <input class="drive-card-input" type="checkbox" >
+    <span
+    class="car-name"
 
-<p>drive works!</p>
+    >{{car.name}}</span>
+    <span class="car-price">{{car.price}},00 EUR</span>
+  </div>
+</div>
