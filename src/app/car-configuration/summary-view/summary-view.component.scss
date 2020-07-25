@@ -5,9 +5,6 @@
 
 /// parent container
 .container{
-  @media only screen and (max-width: 450px){
-    font-size: 50%;
-  }
   display: grid;
   grid-template-columns: auto;
   justify-content: center;
@@ -60,20 +57,19 @@ align-items: center;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 2.5rem;
 }
 
 .price-text{
   display: grid;
   justify-items: self-start;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 .price{
   display: grid;
   justify-items: self-end;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 /// extras
@@ -81,19 +77,18 @@ align-items: center;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 2.5rem;
 }
 .extras-text{
   display: grid;
   justify-items: self-start;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 .extras-price{
   display: grid;
   justify-items: self-end;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 /// final-price
@@ -101,20 +96,19 @@ align-items: center;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 2.5rem;
 }
 
 .finalPrice-text{
   display: grid;
   justify-items: self-start;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 .finalPrice{
   display: grid;
   justify-items: self-end;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 1.30rem;
 }
 
 /// leasing Price
@@ -122,19 +116,18 @@ align-items: center;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 2.5rem;
 }
 .leasingPrice-text{
   display: grid;
   justify-items: self-start;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 .leasingPrice{
   display: grid;
   justify-items: self-end;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 /// button pointing to overview
@@ -147,6 +140,7 @@ align-items: center;
 .overview-button{
   padding: 1rem;
   background-color: black;
+  font-size: 1.15rem;
   text-decoration: none;
   color: white;
 

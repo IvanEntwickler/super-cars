@@ -1,14 +1,20 @@
 <div class="header__container">
   <h3>Alle Antriebe im Überblick</h3>
 </div>
+<form [formGroup]="driveForm" (ngSubmit)="onSubmit()">
 <div class="drive-config__container">
   <span class="intro-text">
     Alle Antriebsvarianten, Daten zum Stromverbrauch
     sowie Beschleunigung und Höchstgeschwindigkeit für Ihren
-    <strong>{{car.model}} | {{car.name}}</strong>.
+    <strong>{{car[0]}} | {{car[1]}}</strong>.
   </span>
   <label for="extra-select">Austattungslinien</label>
-  <select class="select__container" name="extra" id="extra-select">
+  <select
+  class="select__container"
+  formControlName="extra"
+  id="extra-select"
+  (change)= "onSelectOptions($event)"
+  >
     <option>Alle</option>
     <option selected>am meisten gekauft</option>
     <option>Basis</option>
@@ -17,21 +23,45 @@
     <option>edition one</option>
   </select>
   <div class="input__container">
-    <div class="drive1__container" *ngIf="car.driveType1 !== null">
-      <input class="drive-input" type="checkbox" id="drive1"/>
-      <label for="drive1">{{car.driveType1}}</label>
+    <div class="drive1__container" *ngIf="car[10] !== null">
+      <input
+      class="drive-input"
+      type="checkbox"
+      id="drive1"
+      formControlName="drive1"
+      (change)= "onDrive1($event)"
+      >
+      <label for="drive1">{{car[10]}}</label>
     </div>
-    <div class="drive2__container" *ngIf="car.driveType1 !== null">
-      <input class="drive-input" type="checkbox" id="drive2"/>
-      <label for="drive2">{{car.driveType2}}</label>
+    <div class="drive2__container" *ngIf="car[11] !== null">
+      <input
+      class="drive-input"
+      type="checkbox"
+      id="drive2"
+      formControlName="drive2"
+      (change)= "onDrive2($event)"
+      >
+      <label for="drive2">{{car[11]}}</label>
     </div>
-    <div class="fuel1__container" *ngIf="car.fuel1 !== null">
-      <input class="drive-input" type="checkbox" id="fuel1"/>
-      <label for="fuel1">{{car.fuel1}}</label>
+    <div class="fuel1__container" *ngIf="car[8] !== null">
+      <input
+      class="drive-input"
+      type="checkbox"
+      id="fuel1"
+      formControlName="fuel1"
+      (change)= "onFuel1($event)"
+      >
+      <label for="fuel1">{{car[8]}}</label>
     </div>
-    <div class="fuel2__container" *ngIf="car.fuel2 !== null">
-      <input class="drive-input" type="checkbox" id="fuel2"/>
-      <label for="fuel2">{{car.fuel2}}</label>
+    <div class="fuel2__container" *ngIf="car[9] !== null">
+      <input
+      class="drive-input"
+      type="checkbox"
+      id="fuel2"
+      formControlName="fuel2"
+      (change)= "onFuel2($event)"
+      >
+      <label for="fuel2">{{car[9]}}</label>
     </div>
   </div>
 </div>
@@ -41,10 +71,15 @@
 <div class="drive-cards__container">
   <div
   class="drive-cards"
-  *ngFor="let car of car.motor; let i = index"
+  *ngFor="let car of car[12]; let i = index"
   [ngClass]="{'drive-cards': car.mostWanted === false, 'drive-cards-mostWanted': car.mostWanted === true}"
   >
-    <input class="drive-card-input" type="checkbox" >
+    <input
+    class="drive-card-input"
+    type="checkbox"
+    formControlName="driveCard"
+    (change)= "onDriveCard($event)"
+    >
     <span
     class="car-name"
 
@@ -52,3 +87,7 @@
     <span class="car-price">{{car.price}},00 EUR</span>
   </div>
 </div>
+<div class="button__container">
+  <button class="drive__submit" type="submit">Weiter zu Exterieur</button>
+</div>
+</form>

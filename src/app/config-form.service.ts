@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ConfigFormService {
   /// creating a shareable resource for multiple forms
+  constructor(private formbuilder: FormBuilder) { }
   configForm: BehaviorSubject<FormGroup | undefined> =
   new BehaviorSubject(this.formbuilder.group({
       basis: this.formbuilder.control(true),
@@ -20,12 +21,23 @@ export class ConfigFormService {
       packageTwo: this.formbuilder.control(null),
   }));
   configForm$: Observable<FormGroup> = this.configForm.asObservable();
-  constructor(private formbuilder: FormBuilder) { }
+
+  driveForm: BehaviorSubject<FormGroup | undefined> =
+  new BehaviorSubject(this.formbuilder.group({
+      extra: this.formbuilder.control('am meisten gekauft'),
+      drive1: this.formbuilder.control(null),
+      drive2: this.formbuilder.control(null),
+      fuel1: this.formbuilder.control(null),
+      fuel2: this.formbuilder.control(null),
+      driveCard: this.formbuilder.control(null),
+  }));
+  driveForm$: Observable<FormGroup> = this.driveForm.asObservable();
+
 
 
 
   /// Lines & Packages Component, configForm
-  /// Drive Component
+  /// Drive Component, driveForm
   /// interieur
   /// exterieur
   /// summary

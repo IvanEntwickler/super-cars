@@ -242,7 +242,7 @@ onExtraPackageOne(event) {
 }
 
 onExtraPackageTwo(event) {
-  /// variables to control the form controls
+  /// variablee to control the form controls
   const packageTwo: FormControl = this.inputForm.get('packageTwo') as FormControl;
   /// operation on car.extras
   const addExtra = this.car.extras + 3704;
