@@ -29,7 +29,7 @@ export class ConfigFormService {
       drive2: this.formbuilder.control(null),
       fuel1: this.formbuilder.control(null),
       fuel2: this.formbuilder.control(null),
-      driveCard: this.formbuilder.control(null),
+      driveCard: this.formbuilder.array([]),
   }));
   driveForm$: Observable<FormGroup> = this.driveForm.asObservable();
 

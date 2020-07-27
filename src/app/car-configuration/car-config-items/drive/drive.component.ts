@@ -1,5 +1,5 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { ConfigFormService } from './../../../config-form.service';
 import { Subscription } from 'rxjs';
 import { Car } from './../../../interface';
@@ -12,7 +12,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./drive.component.scss']
 })
 export class DriveComponent implements OnInit, OnDestroy {
-  car: Car[];
+  car: Car;
   subscription: Subscription;
   formSub: Subscription;
   driveForm: FormGroup;
@@ -27,20 +27,58 @@ export class DriveComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     /// getting the car State
-    this.subscription = this.carModelService.getCarState().subscribe(car => this.car = Object.values(car).slice());
+    this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
     /// getting the driveForm from Service
     this.formSub = this.configFormService.driveForm$.subscribe(form => this.driveForm = form);
   }
 
   onSelectOptions(event) {
     /// variable to control the form controls
-    const extra: FormControl = this.driveForm.get('extras') as FormControl;
+    const lineTypeCheck = this.car.motor
+    .filter(
+      obj => {
+        return obj.lineType === 'Basis';
+      });
+    console.log(lineTypeCheck);
+    const control = new FormControl(lineTypeCheck.values());
+    if (lineTypeCheck) {
+      return this.getDriveCardControls().push(control);
+    } else {
+      console.log(event.target.value);
+    }
+
+}
+
+getDriveCardControls() {
+  return (this.driveForm.get('driveCard') as FormArray).controls;
+}
+  onDrive1() {
+    const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
+    const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
+    const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
+    const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onDrive1() {}
-  onDrive2() {}
-  onFuel1() {}
-  onFuel2() {}
-  onDriveCard() {}
+  onDrive2() {
+    const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
+    const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
+    const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
+    const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
+  }
+  onFuel1() {
+    const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
+    const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
+    const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
+    const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
+  }
+  onFuel2() {
+    const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
+    const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
+    const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
+    const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
+  }
+  onDriveCard() {
+    const driveCard: FormControl = this.driveForm.get('driveCard') as FormControl;
+  }
 
   onSubmit() {
     console.log(this.driveForm.value);

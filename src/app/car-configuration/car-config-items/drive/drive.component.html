@@ -6,7 +6,7 @@
   <span class="intro-text">
     Alle Antriebsvarianten, Daten zum Stromverbrauch
     sowie Beschleunigung und Höchstgeschwindigkeit für Ihren
-    <strong>{{car[0]}} | {{car[1]}}</strong>.
+    <strong>{{car.model}} | {{car.name}}</strong>
   </span>
   <label for="extra-select">Austattungslinien</label>
   <select
@@ -23,7 +23,7 @@
     <option>edition one</option>
   </select>
   <div class="input__container">
-    <div class="drive1__container" *ngIf="car[10] !== null">
+    <div class="drive1__container" *ngIf="car.driveType1 !== null">
       <input
       class="drive-input"
       type="checkbox"
@@ -31,9 +31,9 @@
       formControlName="drive1"
       (change)= "onDrive1($event)"
       >
-      <label for="drive1">{{car[10]}}</label>
+      <label for="drive1">{{car.driveType1}}</label>
     </div>
-    <div class="drive2__container" *ngIf="car[11] !== null">
+    <div class="drive2__container" *ngIf="car.driveType2 !== null">
       <input
       class="drive-input"
       type="checkbox"
@@ -41,9 +41,9 @@
       formControlName="drive2"
       (change)= "onDrive2($event)"
       >
-      <label for="drive2">{{car[11]}}</label>
+      <label for="drive2">{{car.driveType2}}</label>
     </div>
-    <div class="fuel1__container" *ngIf="car[8] !== null">
+    <div class="fuel1__container" *ngIf="car.fuel1 !== null">
       <input
       class="drive-input"
       type="checkbox"
@@ -51,9 +51,9 @@
       formControlName="fuel1"
       (change)= "onFuel1($event)"
       >
-      <label for="fuel1">{{car[8]}}</label>
+      <label for="fuel1">{{car.fuel1}}</label>
     </div>
-    <div class="fuel2__container" *ngIf="car[9] !== null">
+    <div class="fuel2__container" *ngIf="car.fuel2 !== null">
       <input
       class="drive-input"
       type="checkbox"
@@ -61,7 +61,7 @@
       formControlName="fuel2"
       (change)= "onFuel2($event)"
       >
-      <label for="fuel2">{{car[9]}}</label>
+      <label for="fuel2">{{car.fuel2}}</label>
     </div>
   </div>
 </div>
@@ -71,20 +71,21 @@
 <div class="drive-cards__container">
   <div
   class="drive-cards"
-  *ngFor="let car of car[12]; let i = index"
-  [ngClass]="{'drive-cards': car.mostWanted === false, 'drive-cards-mostWanted': car.mostWanted === true}"
+  formArrayName="driveCard"
+  *ngFor="let carDrive of getDriveCardControls().concat(carDrive); let i = index"
+  [ngClass]="{'drive-cards': carDrive.mostWanted === false, 'drive-cards-mostWanted': carDrive.mostWanted === true}"
+  [formControlName]="i"
   >
     <input
     class="drive-card-input"
     type="checkbox"
-    formControlName="driveCard"
     (change)= "onDriveCard($event)"
     >
     <span
     class="car-name"
 
-    >{{car.name}}</span>
-    <span class="car-price">{{car.price}},00 EUR</span>
+    >{{carDrive.name}}</span>
+    <span class="car-price">{{carDrive.price}},00 EUR</span>
   </div>
 </div>
 <div class="button__container">
