@@ -118,7 +118,20 @@
   width: 48vw;
 }
 
-.drive-cards{
+.dynamicCard-mostWanted{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: rgb(26, 226, 216);
+  width: 47vw;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.dynamicCard{
   display: grid;
   align-items: center;
   grid-template-columns: auto auto auto;
@@ -131,18 +144,6 @@
   }
 }
 
-.drive-cards-mostWanted{
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto auto auto;
-  gap: 3rem;
-  padding: 2rem;
-  background-color: rgb(26, 226, 216);
-  width: 47vw;
-  &:hover{
-    cursor: pointer;
-  }
-}
 
 .drive-card-input{
   display: grid;

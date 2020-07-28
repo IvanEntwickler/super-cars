@@ -33,16 +33,20 @@ export class DriveComponent implements OnInit, OnDestroy {
   }
 
   onSelectOptions(event) {
-    /// variable to control the form controls
+    /// filtering if the selected event.target.value is = lineType
     const lineTypeCheck = this.car.motor
     .filter(
       obj => {
-        return obj.lineType === 'Basis';
+        return obj.lineType === event.target.value;
       });
     console.log(lineTypeCheck);
-    const control = new FormControl(lineTypeCheck.values());
+    /// saving the value output into a FormControl
+    const control = new FormControl(lineTypeCheck);
+    console.log(control);
+    /// if true push the FormControl into the AbstractControl[]
+    /// else log the event.target.value ---> 'Alle', 'Basis', 'advanced', 'sLine', 'editionOne'
     if (lineTypeCheck) {
-      return this.getDriveCardControls().push(control);
+      this.getDriveCardControls().push(control);
     } else {
       console.log(event.target.value);
     }
@@ -52,31 +56,31 @@ export class DriveComponent implements OnInit, OnDestroy {
 getDriveCardControls() {
   return (this.driveForm.get('driveCard') as FormArray).controls;
 }
-  onDrive1() {
+  onDrive1(event) {
     const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
     const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onDrive2() {
+  onDrive2(event) {
     const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
     const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onFuel1() {
+  onFuel1(event) {
     const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
     const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onFuel2() {
+  onFuel2(event) {
     const drive1: FormControl = this.driveForm.get('drive1') as FormControl;
     const drive2: FormControl = this.driveForm.get('drive2') as FormControl;
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onDriveCard() {
+  onDriveCard(event) {
     const driveCard: FormControl = this.driveForm.get('driveCard') as FormControl;
   }
 

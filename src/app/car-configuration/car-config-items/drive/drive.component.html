@@ -16,11 +16,10 @@
   (change)= "onSelectOptions($event)"
   >
     <option>Alle</option>
-    <option selected>am meisten gekauft</option>
-    <option>Basis</option>
+    <option selected>Basis</option>
     <option>advanced</option>
-    <option>S line</option>
-    <option>edition one</option>
+    <option>sLine</option>
+    <option>editionOne</option>
   </select>
   <div class="input__container">
     <div class="drive1__container" *ngIf="car.driveType1 !== null">
@@ -70,23 +69,49 @@
 </div>
 <div class="drive-cards__container">
   <div
-  class="drive-cards"
   formArrayName="driveCard"
-  *ngFor="let carDrive of getDriveCardControls().concat(carDrive); let i = index"
-  [ngClass]="{'drive-cards': carDrive.mostWanted === false, 'drive-cards-mostWanted': carDrive.mostWanted === true}"
-  [formControlName]="i"
-  >
-    <input
-    class="drive-card-input"
-    type="checkbox"
-    (change)= "onDriveCard($event)"
-    >
-    <span
-    class="car-name"
+  *ngFor="let control of getDriveCardControls(); index as i"
 
-    >{{carDrive.name}}</span>
-    <span class="car-price">{{carDrive.price}},00 EUR</span>
+  >
+  <div>
+    <div
+      class="dynamicCard"
+    *ngFor="let newControl of control.value"
+    [ngClass]="{'dynamicCard': newControl.mostWanted === false,
+    'dynamicCard-mostWanted': newControl.mostWanted === true}"
+    >
+      <input
+      class="drive-card-input"
+      type="checkbox"
+      (change)= "onDriveCard($event)"
+      >
+      <span
+      class="car-name"
+      >{{newControl.name}}</span>
+      <span class="car-price"
+      >{{newControl.price}},00 EUR</span>
+    </div>
   </div>
+  <!-- <div *ngIf="allDriveLoop">
+    <div
+      class="dynamicCard"
+    *ngFor="let newControl of control.value"
+    [ngClass]="{'dynamicCard': newControl.mostWanted === false,
+    'dynamicCard-mostWanted': newControl.mostWanted === true}"
+    >
+      <input
+      class="drive-card-input"
+      type="checkbox"
+      (change)= "onDriveCard($event)"
+      >
+      <span
+      class="car-name"
+      >{{newControl.name}}</span>
+      <span class="car-price"
+      >{{newControl.price}},00 EUR</span>
+    </div>
+  </div> -->
+</div>
 </div>
 <div class="button__container">
   <button class="drive__submit" type="submit">Weiter zu Exterieur</button>

@@ -24,7 +24,7 @@ export class ConfigFormService {
 
   driveForm: BehaviorSubject<FormGroup | undefined> =
   new BehaviorSubject(this.formbuilder.group({
-      extra: this.formbuilder.control('am meisten gekauft'),
+      extra: this.formbuilder.control('Alle'),
       drive1: this.formbuilder.control(null),
       drive2: this.formbuilder.control(null),
       fuel1: this.formbuilder.control(null),
