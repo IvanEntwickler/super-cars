@@ -24,7 +24,7 @@ export class ConfigFormService {
 
   driveForm: BehaviorSubject<FormGroup | undefined> =
   new BehaviorSubject(this.formbuilder.group({
-      extra: this.formbuilder.control('Alle'),
+      extra: this.formbuilder.control('Bitte einen Antrieb auswählen'),
       drive1: this.formbuilder.control(null),
       drive2: this.formbuilder.control(null),
       fuel1: this.formbuilder.control(null),

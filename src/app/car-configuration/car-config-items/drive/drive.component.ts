@@ -33,22 +33,20 @@ export class DriveComponent implements OnInit, OnDestroy {
   }
 
   onSelectOptions(event) {
+    const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
     /// filtering if the selected event.target.value is = lineType
     const lineTypeCheck = this.car.motor
     .filter(
       obj => {
         return obj.lineType === event.target.value;
       });
-    console.log(lineTypeCheck);
     /// saving the value output into a FormControl
     const control = new FormControl(lineTypeCheck);
-    console.log(control);
-    /// if true push the FormControl into the AbstractControl[]
-    /// else log the event.target.value ---> 'Alle', 'Basis', 'advanced', 'sLine', 'editionOne'
-    if (lineTypeCheck) {
+    /// if true push the FormControl into the AbstractControl[] and remove when other is selected
+    /// else log the event.target.value ---> 'Basis', 'advanced', 'sLine', 'editionOne'
+    if (control !== null) {
+      driveCard.removeAt(-1);
       this.getDriveCardControls().push(control);
-    } else {
-      console.log(event.target.value);
     }
 
 }
