@@ -33,6 +33,7 @@ export class DriveComponent implements OnInit, OnDestroy {
   }
 
   onSelectOptions(event) {
+    /// getting the FormArray and saving it into a const
     const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
     /// filtering if the selected event.target.value is = lineType
     const lineTypeCheck = this.car.motor
@@ -78,8 +79,20 @@ getDriveCardControls() {
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onDriveCard(event) {
-    const driveCard: FormControl = this.driveForm.get('driveCard') as FormControl;
+  onDriveCardInput(event) {
+     /// getting the FormArray and saving it into a const
+    const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
+    /// check if the input was checked
+    const eventCheck = event.target.checked ? true : false;
+    /// mapping the driveCard values
+    const driveCardValues = driveCard.value.map((element, index) => element[index]);
+    /// filter on condition input checked
+    /// true = set value in driveCard to driveCardValues(input which was checked)
+    /// false(unchecked)= reset control
+    const filterDriveCard = driveCard.controls.filter((control) => {
+      return eventCheck ? driveCard.setValue([driveCardValues]) : control.reset();
+    });
+    return filterDriveCard;
   }
 
   onSubmit() {

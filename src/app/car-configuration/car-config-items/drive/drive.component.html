@@ -78,14 +78,14 @@
   <div>
     <div
       class="dynamicCard"
-    *ngFor="let newControl of control.value"
+    *ngFor="let newControl of control.value; let i = index"
     [ngClass]="{'dynamicCard': newControl.mostWanted === false,
     'dynamicCard-mostWanted': newControl.mostWanted === true}"
     >
       <input
       class="drive-card-input"
       type="checkbox"
-      (change)= "onDriveCard($event)"
+      (change)= "onDriveCardInput($event)"
       >
       <span
       class="car-name"
