@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { ConfigFormService } from './../../../config-form.service';
@@ -79,13 +80,13 @@ getDriveCardControls() {
     const fuel1: FormControl = this.driveForm.get('fuel1') as FormControl;
     const fuel2: FormControl = this.driveForm.get('fuel2') as FormControl;
   }
-  onDriveCardInput(event) {
+  onDriveCardChange(event) {
      /// getting the FormArray and saving it into a const
     const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
     /// check if the input was checked
     const eventCheck = event.target.checked ? true : false;
     /// mapping the driveCard values
-    const driveCardValues = driveCard.value.map((element, index) => element[index]);
+    const driveCardValues = driveCard.value.map((el, index) => el[index]);
     /// filter on condition input checked
     /// true = set value in driveCard to driveCardValues(input which was checked)
     /// false(unchecked)= reset control
