@@ -56,13 +56,6 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         {
           name: 'advanced 55 quattro',
-          price: 82200,
-          leasing: 610,
-          lineType: 'advanced',
-          mostWanted: false,
-        },
-        {
-          name: 'advanced 55 quattro',
           price: 83700,
           leasing: 620,
           lineType: 'advanced',
@@ -112,13 +105,6 @@ export class InMemoryDataService implements InMemoryDbService {
           price: 83550,
           leasing: 630,
           lineType: 'Basis',
-          mostWanted: false,
-        },
-        {
-          name: 'advanced 55 quattro',
-          price: 85055,
-          leasing: 650,
-          lineType: 'advanced',
           mostWanted: false,
         },
         {

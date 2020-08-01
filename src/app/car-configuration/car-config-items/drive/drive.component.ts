@@ -46,9 +46,12 @@ export class DriveComponent implements OnInit, OnDestroy {
     const control = new FormControl(lineTypeCheck);
     /// if true push the FormControl into the AbstractControl[] and remove when other is selected
     /// else log the event.target.value ---> 'Basis', 'advanced', 'sLine', 'editionOne'
-    if (control !== null) {
-      driveCard.removeAt(-1);
+    if (control) {
+      for (let i = driveCard.length - 1; i >= 0; i--) {
+        driveCard.removeAt(i);
+      }
       this.getDriveCardControls().push(control);
+      console.log(control.value);
     }
 
 }
@@ -83,15 +86,13 @@ getDriveCardControls() {
   onDriveCardChange(event) {
      /// getting the FormArray and saving it into a const
     const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
-    /// check if the input was checked
-    const eventCheck = event.target.checked ? true : false;
     /// mapping the driveCard values
     const driveCardValues = driveCard.value.map((el, index) => el[index]);
     /// filter on condition input checked
     /// true = set value in driveCard to driveCardValues(input which was checked)
     /// false(unchecked)= reset control
-    const filterDriveCard = driveCard.controls.filter((control) => {
-      return eventCheck ? driveCard.setValue([driveCardValues]) : control.reset();
+    const filterDriveCard = driveCard.controls.filter((control, index) => {
+      return event.target.values ? driveCard.patchValue(driveCardValues[index]) : [];
     });
     return filterDriveCard;
   }

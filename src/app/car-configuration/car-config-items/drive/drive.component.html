@@ -72,29 +72,27 @@
 <div class="drive-cards__container">
   <div
   formArrayName="driveCard"
-  *ngFor="let control of getDriveCardControls(); index as i"
-
+  *ngFor="let control of getDriveCardControls()"
   >
-  <div>
-    <div
-      class="dynamicCard"
-    *ngFor="let newControl of control.value; let i = index"
-    [ngClass]="{'dynamicCard': newControl.mostWanted === false,
-    'dynamicCard-mostWanted': newControl.mostWanted === true}"
+
+  <div
+  class="dynamicCard"
+  *ngFor="let controlDetails of control.value; let i = index"
+  [ngClass]="{'dynamicCard': controlDetails.mostWanted === false,
+  'dynamicCard-mostWanted': controlDetails.mostWanted === true}"
+  >
+    <input
+    (change)= "onDriveCardChange($event)"
+    class="drive-card-input"
+    type="checkbox"
     >
-      <input
-      class="drive-card-input"
-      type="checkbox"
-      (input)= "onDriveCardChange($event)"
-      >
-      <span
-      class="car-name"
-      >{{newControl.name}}</span>
-      <span class="car-price"
-      >{{newControl.price}},00 EUR</span>
+    <span
+    class="car-name"
+    >{{controlDetails.name}}</span>
+    <span class="car-price"
+    >{{controlDetails.price}},00 EUR</span>
     </div>
   </div>
-</div>
 </div>
 <div class="button__container">
   <button class="drive__submit" type="submit">Weiter zu Exterieur</button>
