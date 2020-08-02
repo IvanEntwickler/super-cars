@@ -92,14 +92,28 @@ getDriveCardControls() {
     /// true = set value in driveCard to driveCardValues(input which was checked)
     /// false(unchecked)= reset control
     const filterDriveCard = driveCard.controls.filter((control, index) => {
-      return event.target.values ? driveCard.patchValue(driveCardValues[index]) : [];
+      if (event.target.checked) {
+        return driveCard.patchValue(driveCardValues);
+      }
+      if (!event.target.checked) {
+         return driveCard.reset();
+      }
     });
     return filterDriveCard;
   }
 
   onSubmit() {
+    const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
     console.log(this.driveForm.value);
+    // maps the price of the selected driveCard
+    const priceRecalc = driveCard.controls.map((control, index) => control.value.price);
+    // maps the price of the selected calculates against the buyPrice
+    const addPrice = priceRecalc.reduce((prev, current) => prev + current, this.car.buyPrice);
+    // adds the new buyPrice
+    const addPriceNow = addPrice - this.car.buyPrice;
+    const newbuyPrice = this.car.buyPrice = addPriceNow;
     this.router.navigate(['../exterieur'], {relativeTo: this.route});
+    return newbuyPrice;
   }
 
   /// prevents memory leak --- removes subscription
