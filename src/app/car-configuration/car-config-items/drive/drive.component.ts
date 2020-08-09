@@ -105,15 +105,18 @@ getDriveCardControls() {
   onSubmit() {
     const driveCard: FormArray = this.driveForm.get('driveCard') as FormArray;
     console.log(this.driveForm.value);
-    // maps the price of the selected driveCard
-    const priceRecalc = driveCard.controls.map((control, index) => control.value.price);
-    // maps the price of the selected calculates against the buyPrice
-    const addPrice = priceRecalc.reduce((prev, current) => prev + current, this.car.buyPrice);
-    // adds the new buyPrice
-    const addPriceNow = addPrice - this.car.buyPrice;
-    const newbuyPrice = this.car.buyPrice = addPriceNow;
     this.router.navigate(['../exterieur'], {relativeTo: this.route});
-    return newbuyPrice;
+    /// checking if the a drive was added or not
+    if (driveCard.value.length !== 0) {
+      // maps the price of the selected driveCard
+      const priceRecalc = driveCard.controls.map((control, index) => control.value.price);
+      // calculates against the buyPrice
+      const addPrice = priceRecalc.reduce((prev, current) => prev + current, this.car.buyPrice);
+      // adds the new buyPrice
+      const addPriceNow = addPrice - this.car.buyPrice;
+      const newbuyPrice = this.car.buyPrice = addPriceNow;
+      return newbuyPrice;
+    }
   }
 
   /// prevents memory leak --- removes subscription
