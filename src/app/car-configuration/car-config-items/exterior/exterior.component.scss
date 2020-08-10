@@ -1,0 +1,44 @@
+.header__container{
+  display:grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--color-grey-light-4);
+
+  h3{
+    font-size: 2rem;
+  }
+}
+/// whole content afte the header
+.content__container{
+
+}
+
+/// text and image
+
+.text-image__container{
+
+}
+
+.text{
+
+}
+
+.car-image{
+
+}
+
+/// color details --> color name price
+
+.color-details__container{
+
+}
+
+.color-details{
+
+}
+
+.color-button{
+
+}

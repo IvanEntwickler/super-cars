@@ -14,6 +14,9 @@ export interface Car {
   driveType1?: string | null;
   driveType2?: string | null;
   motor?: any[];
+  exteriorColorPrice1: number;
+  exteriorColorPrice2: number;
+  exteriorColorPrice3: number;
 }
 
 

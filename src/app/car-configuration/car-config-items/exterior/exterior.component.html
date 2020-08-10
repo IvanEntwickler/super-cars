@@ -1,1 +1,72 @@
+<div class="header__container">
+  <h3>Details machen den Unterschied</h3>
+</div>
+<div class="content__container">
+  <div class="text-image__container">
+    <span *ngIf="car.fuel1 === 'Elektro'; else otherDrive" class="text">
+      Mit dem <strong>{{car.name}}</strong> übersetzt Audi die grundlegende Formensprache
+      der Marke ins Elektro-Zeitalter.
+      Stilprägende Details machen deutlich, dass der {{car.name}} rein elektrisch fährt,
+      darunter die spezifische Tagfahrlicht-Signatur,
+      die elektrische Ladeklappe und der Entfall der Abgas-Endrohre.
+    </span>
+    <ng-template #otherDrive>
+      Gestalten Sie das Exterieur Ihres Audi <strong>{{car.model}} {{car.name}}</strong> nach Ihren Wünschen.
+      Egal ob Außenfarbe, Felge oder Scheinwerfer-Technologie:
+      Durch die zahlreichen Ausstattungsoptionen wird der
+      Audi {{car.model}} {{car.name}} zu Ihrem persönlichen Traumwagen.
+    </ng-template>
+    <img class="car-image" src="{{car.imageUrl[0]}}" alt="car-pic">
+  </div>
+  <div class="header__container">
+    <h3>Außenfarbe</h3>
+  </div>
+  <div class="color-details__container">
+    <div class="color-details">
+      <span>Uni-Lacke</span>
+      <button class="color-button"></button>
+      <span>Name when hovered</span>
+      <span> {{car.exteriorColorPrice1}},00 EUR</span>
+    </div>
+    <div class="color-details">
+      <span>Metallic-Lacke</span>
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <span>Name when hovered</span>
+      <span> {{car.exteriorColorPrice2}},00 EUR</span>
+    </div>
+    <div class="color-details">
+      <span>Weitere Metallic-Lacke</span>
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <span>Name when hovered</span>
+      <span> {{car.exteriorColorPrice3}},00 EUR</span>
+    </div>
+    <div class="color-details">
+      <span>Perleffekt-Lacke</span>
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <input class="color-button" type="button">
+      <span>Name when hovered</span>
+      <span> {{car.exteriorColorPrice3}},00 EUR</span>
+    </div>
+    <div class="">
+      <span>Individuallackierungen</span>
+      <input class="color-button" type="button">
+      <span>Name when hovered</span>
+      <span> {{car.exteriorColorPrice3}},00 EUR</span>
+    </div>
+  </div>
+</div>
 <p>exterior works!</p>

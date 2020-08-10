@@ -25,40 +25,9 @@ export class InMemoryDataService implements InMemoryDbService {
       fuel2: null,
       driveType1: null,
       driveType2: null,
-      exteriorColor: [
-        {
-          type: 'Uni-Lacke',
-          price: 0,
-          color: '',
-        },
-        {
-          type: 'Metallic-Lacke',
-          price: 974,
-          color: [
-            ''
-          ],
-        },
-        {
-          type: 'Metallic-Lacke',
-          price: 2826,
-          color: [
-            ''
-          ],
-        },
-        {
-          type: 'Perleffekt-Lacke',
-          price: 2826,
-          color: [
-            ''
-          ],
-        },
-        {
-          type: 'Individual',
-          price: 2826,
-          color: '',
-        },
-
-      ],
+      exteriorColorPrice1: 0,
+      exteriorColorPrice2: 974,
+      exteriorColorPrice3: 2826,
       motor: [
         {
           name: '50 quattro',
