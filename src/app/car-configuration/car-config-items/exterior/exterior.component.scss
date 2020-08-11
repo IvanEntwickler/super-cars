@@ -10,15 +10,17 @@
     font-size: 2rem;
   }
 }
-/// whole content afte the header
+/// content after the header
 .content__container{
-
+display: grid;
+grid-template-columns: auto;
 }
 
 /// text and image
 
 .text-image__container{
-
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .text{
@@ -26,19 +28,73 @@
 }
 
 .car-image{
-
+  @media only screen and (max-width: 375px){
+    max-width: 20rem;
+  }
+  @media only screen and (max-width: 900px){
+    max-width: 30rem;
+  }
+  max-width: 40rem;
+  height: auto;
 }
 
 /// color details --> color name price
 
 .color-details__container{
+  display:grid;
+  grid-template-columns: auto;
+  gap: 0.5rem;
 
 }
 
 .color-details{
+  display:grid;
+  grid-template-columns: auto;
+}
 
+.color-input__container{
+  @media only screen and (max-width: 375px){
+    display:grid;
+    grid-template-columns: auto auto;
+  }
+  @media only screen and (max-width: 900px){
+    display:grid;
+    grid-template-columns: auto auto auto;
+  }
+  display:grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 10rem;
+  grid-template-rows: auto;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
 .color-button{
+  width: 7rem;
+  height: 7rem;
+  border:none;
+  box-shadow:
+  inset 0 -1px 0.3rem #fff;
 
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+/// rainbow button
+.color-button-individual{
+  width: 7rem;
+  height: 7rem;
+  border: transparent;
+  box-shadow:
+        inset 0 1rem #8C00FC,
+        inset 0 2rem#3500FF,
+        inset 0 3.5em #01FE01,
+        inset 0 4rem #FFFE37,
+        inset 0 5rem#FF8600,
+        inset 0 6rem#ED0003;
+
+  &:hover{
+    cursor: pointer;
+  }
 }

@@ -5,7 +5,7 @@
   <div class="text-image__container">
     <span *ngIf="car.fuel1 === 'Elektro'; else otherDrive" class="text">
       Mit dem <strong>{{car.name}}</strong> übersetzt Audi die grundlegende Formensprache
-      der Marke ins Elektro-Zeitalter.
+      der Marke ins Elektro-Zeitalter.<br>
       Stilprägende Details machen deutlich, dass der {{car.name}} rein elektrisch fährt,
       darunter die spezifische Tagfahrlicht-Signatur,
       die elektrische Ladeklappe und der Entfall der Abgas-Endrohre.
@@ -24,46 +24,90 @@
   <div class="color-details__container">
     <div class="color-details">
       <span>Uni-Lacke</span>
-      <button class="color-button"></button>
+        <div
+        class="color-input__container"
+        >
+          <ng-container
+          *ngFor="let color of carColorUni; let i = index">
+            <input
+            class="color-button"
+            type="button"
+            [ngStyle]="{'background-color':getColor(color.colorName)}"
+            >
+          </ng-container>
+        </div>
       <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice1}},00 EUR</span>
     </div>
-    <div class="color-details">
+    <div
+    class="color-details">
       <span>Metallic-Lacke</span>
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
+        <div
+        class="color-input__container"
+        >
+        <ng-container
+        *ngFor="let color of carColorMetallic1"
+        >
+          <input
+          class="color-button"
+          type="button"
+          [ngStyle]="{'background-color':getColor(color.colorName)}"
+          >
+        </ng-container>
+        </div>
       <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice2}},00 EUR</span>
     </div>
     <div class="color-details">
       <span>Weitere Metallic-Lacke</span>
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
+        <div
+        class="color-input__container"
+        >
+          <ng-container
+          *ngFor="let color of carColorMetallic2; let i = index"
+          >
+            <input
+            class="color-button"
+            type="button"
+            [ngStyle]="{'background-color':getColor(color.colorName)}"
+            >
+          </ng-container>
+        </div>
       <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
     <div class="color-details">
       <span>Perleffekt-Lacke</span>
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
-      <input class="color-button" type="button">
+      <div
+      class="color-input__container"
+      >
+        <ng-container
+        *ngFor="let color of carColorPerleffekt; let i = index"
+        >
+            <input
+            class="color-button"
+            type="button"
+            [ngStyle]="{'background-color':getColor(color.colorName)}"
+            >
+        </ng-container>
+      </div>
       <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
-    <div class="">
+    <div class="color-details">
       <span>Individuallackierungen</span>
-      <input class="color-button" type="button">
+        <div
+        class="color-input__container"
+        >
+        <ng-container
+        *ngFor="let color of carColorIndividual; let i = index"
+        >
+          <input
+          class="color-button-individual"
+          type="button"
+          >
+        </ng-container>
+      </div>
       <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
