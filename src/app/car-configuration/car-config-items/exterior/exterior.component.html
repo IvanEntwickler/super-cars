@@ -23,25 +23,30 @@
   </div>
   <div class="color-details__container">
     <div class="color-details">
-      <span>Uni-Lacke</span>
+      <span class="color-type">Uni-Lacke</span>
         <div
         class="color-input__container"
         >
           <ng-container
           *ngFor="let color of carColorUni; let i = index">
             <input
+            (click)='onClickColor()'
             class="color-button"
+            id="color.colorName"
             type="button"
             [ngStyle]="{'background-color':getColor(color.colorName)}"
             >
+            <label *ngIf="showColorName" for="color.colorName">{{color.colorName}}</label>
           </ng-container>
         </div>
-      <span>Name when hovered</span>
-      <span> {{car.exteriorColorPrice1}},00 EUR</span>
+        <div *ngFor="let name of carColorUni;">
+          <span class="color-name">{{name.colorName}}</span>
+        </div>
+      <span class="color-price"> {{car.exteriorColorPrice1}},00 EUR</span>
     </div>
     <div
     class="color-details">
-      <span>Metallic-Lacke</span>
+      <span class="color-type" >Metallic-Lacke</span>
         <div
         class="color-input__container"
         >
@@ -49,17 +54,19 @@
         *ngFor="let color of carColorMetallic1"
         >
           <input
+          (click)='onClickColor()'
+          id="color.colorName"
           class="color-button"
           type="button"
           [ngStyle]="{'background-color':getColor(color.colorName)}"
           >
+          <label *ngIf="showColorName" for="color.colorName">{{color.colorName}}</label>
         </ng-container>
         </div>
-      <span>Name when hovered</span>
-      <span> {{car.exteriorColorPrice2}},00 EUR</span>
+      <span class="color-price" > {{car.exteriorColorPrice2}},00 EUR</span>
     </div>
     <div class="color-details">
-      <span>Weitere Metallic-Lacke</span>
+      <span class="color-type">Weitere Metallic-Lacke</span>
         <div
         class="color-input__container"
         >
@@ -67,17 +74,19 @@
           *ngFor="let color of carColorMetallic2; let i = index"
           >
             <input
+            (click)='onClickColor()'
+            id="color.colorName"
             class="color-button"
             type="button"
             [ngStyle]="{'background-color':getColor(color.colorName)}"
             >
+            <label *ngIf="showColorName" for="color.colorName">{{color.colorName}}</label>
           </ng-container>
         </div>
-      <span>Name when hovered</span>
       <span> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
     <div class="color-details">
-      <span>Perleffekt-Lacke</span>
+      <span class="color-type" >Perleffekt-Lacke</span>
       <div
       class="color-input__container"
       >
@@ -85,17 +94,19 @@
         *ngFor="let color of carColorPerleffekt; let i = index"
         >
             <input
+            (click)='onClickColor()'
+            id="color.colorName"
             class="color-button"
             type="button"
             [ngStyle]="{'background-color':getColor(color.colorName)}"
             >
+            <label *ngIf="showColorName" for="color.colorName">{{color.colorName}}</label>
         </ng-container>
       </div>
-      <span>Name when hovered</span>
-      <span> {{car.exteriorColorPrice3}},00 EUR</span>
+      <span class="color-price"> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
     <div class="color-details">
-      <span>Individuallackierungen</span>
+      <span class="color-type" >Individuallackierungen</span>
         <div
         class="color-input__container"
         >
@@ -103,13 +114,15 @@
         *ngFor="let color of carColorIndividual; let i = index"
         >
           <input
+          (click)='onClickColor()'
+          id="color.colorName"
           class="color-button-individual"
           type="button"
           >
+          <label *ngIf="showColorName" for="color.colorName">{{color.colorName}}</label>
         </ng-container>
       </div>
-      <span>Name when hovered</span>
-      <span> {{car.exteriorColorPrice3}},00 EUR</span>
+      <span class="color-price"> {{car.exteriorColorPrice3}},00 EUR</span>
     </div>
   </div>
 </div>

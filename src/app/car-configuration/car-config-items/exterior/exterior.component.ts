@@ -11,6 +11,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class ExteriorComponent implements OnInit, OnDestroy {
   car: Car;
   subscription: Subscription;
+  showColorName = false;
   carColorUni = [
     {colorName: 'Brillantschwarz', colorHex1: '#060606'},
   ];
@@ -85,6 +86,11 @@ export class ExteriorComponent implements OnInit, OnDestroy {
         return '#004990';
     }
   }
+
+  onClickColor() {
+    this.showColorName = !this.showColorName;
+  }
+
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
