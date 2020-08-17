@@ -33,12 +33,19 @@ export class ConfigFormService {
   }));
   driveForm$: Observable<FormGroup> = this.driveForm.asObservable();
 
+  exForm: BehaviorSubject<FormGroup | undefined> =
+  new BehaviorSubject(this.formbuilder.group({
+    carExColor: this.formbuilder.control(null),
+    carExwheels: this.formbuilder.control(null),
+    carExlights: this.formbuilder.control(null)
+  }));
+  exForm$: Observable<FormGroup> = this.exForm.asObservable();
 
 
 
   /// Lines & Packages Component, configForm
   /// Drive Component, driveForm
+  /// exterieur, exForm
   /// interieur
-  /// exterieur
   /// summary
 }

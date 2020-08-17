@@ -1,3 +1,5 @@
+import { FormGroup } from '@angular/forms';
+import { ConfigFormService } from './../../../config-form.service';
 import { CarModelService } from './../../../car-model.service';
 import { Subscription } from 'rxjs';
 import { Car } from './../../../interface';
@@ -10,7 +12,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class ExteriorComponent implements OnInit, OnDestroy {
   car: Car;
+  exForm: FormGroup;
   subscription: Subscription;
+  formSub: Subscription;
   showColorName = false;
   carColorUni = [
     {colorName: 'Brillantschwarz', colorHex1: '#060606'},
@@ -42,13 +46,20 @@ export class ExteriorComponent implements OnInit, OnDestroy {
     {colorName: 'Individuallackierungen Audi exclusive'},
   ];
 
-  constructor(private carModelService: CarModelService) { }
+  constructor(
+    private carModelService: CarModelService,
+    private configFormService: ConfigFormService
+    ) { }
 
   ngOnInit(): void {
+    // getting car state
     this.subscription = this.carModelService.getCarState().subscribe(car => this.car = car);
+    // getting exterior Form
+    this.formSub = this.configFormService.exForm$.subscribe(form => this.exForm = form);
+
   }
 
-  getColor(colorName) {
+  getColor(colorName: string) {
     switch (colorName) {
       case 'Brillantschwarz':
         return '#060606';
@@ -91,6 +102,9 @@ export class ExteriorComponent implements OnInit, OnDestroy {
     this.showColorName = !this.showColorName;
   }
 
+  onSubmit() {
+    console.log(this.exForm.value);
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

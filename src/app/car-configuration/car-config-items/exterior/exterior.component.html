@@ -1,6 +1,7 @@
 <div class="header__container">
   <h3>Details machen den Unterschied</h3>
 </div>
+<form [formGroup]="exForm" (ngSubmit)='onSubmit()'>
 <div class="content__container">
   <div class="text-image__container">
     <span *ngIf="car.fuel1 === 'Elektro'; else otherDrive" class="text">
@@ -135,23 +136,48 @@
   required
 
   >
-    <option [disabled]="true" selected>Bitte auswählen</option>
-    <option [disabled]="true">19 Zoll</option>
+    <option [disabled]="true" selected class='option-disabled1'>Bitte auswählen</option>
+    <option [disabled]="true" class='option-disabled2'>19 Zoll</option>
     <option>Leichtmetallräder, 5-Arm-Aero-Design</option>
-    <option [disabled]="true">20 Zoll</option>
+    <option [disabled]="true" class='option-disabled2'>20 Zoll</option>
     <option>Leichtmetallräder, 5-Arm-Design</option>
     <option>Leichtmetallräder, 5-Arm-Dynamik-Design</option>
     <option>Leichtmetallräder, 5-Doppelspeichen-Edge-Design</option>
-    <option [disabled]="true">21 Zoll</option>
+    <option [disabled]="true" class='option-disabled2'>21 Zoll</option>
     <option>Leichtmetallräder, 15-Speichen-Design</option>
     <option>Leichtmetallräder, 5-Arm-Turbinen-Design</option>
     <option>Leichtmetallräder, 10-Speichen-Rotor-Design</option>
     <option>Leichtmetallräder, 5-V-Speichen-Stern-Design</option>
-    <option [disabled]="true">22 Zoll</option>
+    <option [disabled]="true" class='option-disabled2'>22 Zoll</option>
     <option>Leichtmetallräder, 5-Speichen-Struktur-Design</option>
   </select>
   <button class="wheel-image-button" type="button">Bilder zeigen</button>
   <span class="wheel-price">Price will be shown here</span>
   </div>
+  <div class="header__container">
+    <h3>Scheinwerfer</h3>
+  </div>
+  <div class="lights__container">
+    <select
+  class="lights-select"
+  id="light-select"
+  required
 
+  >
+    <option [disabled]="true" selected class='option-disabled1'>Bitte auswählen</option>
+    <option [disabled]="true"class='option-disabled2'>Standard Serie</option>
+    <option [disabled]="true"class='option-disabled3'>LED-Scheinwerfer(Serie)</option>
+    <option [disabled]="true" class='option-disabled3'>LED-Hauptscheinwerfer mit Linse(Serie)</option>
+    <option [disabled]="true"class='option-disabled2'>Matrix Serie</option>
+    <option>LED-Scheinwerfer,Heckleuchten & Reinigungsanlage</option>
+    <option>advanced selection</option>
+    <option>digitaler LED-Scheinwerfer & Heckleuchten</option>
+  </select>
+  <button class="light-image-button" type="button">Bilder zeigen</button>
+  <span class="light-price">Price will be shown here</span>
+  </div>
+  <div class="button__container">
+    <button class="exterior__submit" type="submit">Weiter zu Interieur</button>
+  </div>
 </div>
+</form>
